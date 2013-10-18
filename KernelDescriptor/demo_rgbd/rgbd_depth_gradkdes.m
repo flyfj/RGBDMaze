@@ -3,7 +3,7 @@
 clear;
 
 % add paths
-addpath('../liblinear-1.5-dense-float/matlab');
+addpath(genpath('../libsvm-3.17/matlab'));
 addpath('../helpfun');
 addpath('../kdes');
 addpath('../emk');
