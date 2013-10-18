@@ -6,19 +6,19 @@ end
 % write images to individual files
 load nyu_depth_data_labeled.mat images
 nframe=size(images,4);
-outdir='./image/';
+outdir='../image/';
   system(['mkdir -p ' outdir]);
 for ii=1:nframe,
   id=num2str(ii,'%08d');
   img=images(:,:,:,ii);
-  imwrite( img, [outdir '/' id '.jpg'], 'Quality', 90 );
+  imwrite( img, [outdir id '.jpg'], 'Quality', 90 );
 end
 clear images
 
 % write depths to individual files
 load nyu_depth_data_labeled.mat depths
 nframe=size(depths,3);
-outdir='./depth_uint16/';
+outdir='../depth_uint16/';
   system(['mkdir -p ' outdir]);
 for ii=1:nframe,
   id=num2str(ii,'%08d');

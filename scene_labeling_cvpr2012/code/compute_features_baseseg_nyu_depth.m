@@ -1,10 +1,12 @@
 
+addpath(genpath(''))
+
 gkdes_words=load_kdes_words_rgbd('gkdes',0.001);
 rgbkdes_words=load_kdes_words_rgbd('rgbkdes',0.01);
 gkdesdepth_words=load_kdes_words_rgbd('gkdesdepth',0.001);
 spinkdes_words=load_kdes_words_rgbd('spinkdes',0.1);
-  spinkdes_words.patch_size=40;
-  spinkdes_words.radius=0.25;
+spinkdes_words.patch_size=40;
+spinkdes_words.radius=0.25;
 
 disp('computing kdes features for base superpixels... (could take a while)');
 
