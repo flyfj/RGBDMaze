@@ -1,0 +1,16 @@
+The NYU Depth Dataset (v1) is from Silberman and Fergus and available at:
+
+http://cs.nyu.edu/~silberman/datasets/nyu_depth_v1.html
+
+Run the script convert_dataset.m to download the dataset and save images and depths
+to individual files with numerical names (mainly to save memory).
+
+To run the experiments, you also need aligned raw depths and gPb-ucm segmentations, available here:
+
+http://homes.cs.washington.edu/~xren/research/cvpr2012_scene/nyu_depth.zip
+
+The raw depth maps we use are slighly different than what are provided in the
+dataset. They are projections of raw depth maps into the image coordinates, so
+that they align with the processed depth maps (in the variable depths).
+
+

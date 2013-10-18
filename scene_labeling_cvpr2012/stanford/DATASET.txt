@@ -1,0 +1,12 @@
+The Stanford Background Dataset is from Gould et al and available at:
+
+http://dags.stanford.edu/projects/scenedataset.html
+
+Run the script convert_dataset.m to download the dataset and rename the files
+with numerical names.
+
+You also need gPb-ucm segmentations of the images, available here:
+
+http://homes.cs.washington.edu/~xren/research/cvpr2012_scene/stanford.zip
+
+
