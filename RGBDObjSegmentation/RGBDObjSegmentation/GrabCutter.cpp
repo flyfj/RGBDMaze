@@ -42,10 +42,6 @@ namespace visualsearch
 		return beta;
 	}
 
-	/*
-	  Calculate weights of noterminal vertices of graph.
-	  beta and gamma - parameters of GrabCut algorithm.
-	 */
 	void GrabCutter::calcNWeights( const cv::Mat& img, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma )
 	{
 		const double gammaDivSqrt2 = gamma / std::sqrt(2.0f);
@@ -90,9 +86,6 @@ namespace visualsearch
 		}
 	}
 
-	/*
-	  Check size, type and element values of mask matrix.
-	 */
 	void GrabCutter::checkMask( const cv::Mat& img, const cv::Mat& mask )
 	{
 		if( mask.empty() )
@@ -113,9 +106,6 @@ namespace visualsearch
 		}
 	}
 
-	/*
-	  Initialize mask using rectangular.
-	*/
 	void GrabCutter::initMaskWithRect( cv::Mat& mask, cv::Size imgSize, cv::Rect rect )
 	{
 		mask.create( imgSize, CV_8UC1 );
@@ -129,9 +119,6 @@ namespace visualsearch
 		(mask(rect)).setTo( cv::Scalar( cv::GC_PR_FGD ) );
 	}
 
-	/*
-	  Initialize GMM background and foreground models using kmeans algorithm.
-	*/
 	void GrabCutter::initGMMs( const cv::Mat& img, const cv::Mat& mask, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM )
 	{
 		const int kMeansItCount = 10;
@@ -140,6 +127,7 @@ namespace visualsearch
 		cv::Mat bgdLabels, fgdLabels;
 		vector<cv::Vec3f> bgdSamples, fgdSamples;
 		cv::Point p;
+		// separate bg and fg samples
 		for( p.y = 0; p.y < img.rows; p.y++ )
 		{
 			for( p.x = 0; p.x < img.cols; p.x++ )
@@ -151,6 +139,7 @@ namespace visualsearch
 			}
 		}
 		CV_Assert( !bgdSamples.empty() && !fgdSamples.empty() );
+
 		cv::Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
 		kmeans( _bgdSamples, learners::ColorGMM::componentsCount, bgdLabels,
 				cv::TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
@@ -169,9 +158,6 @@ namespace visualsearch
 		fgdGMM.endLearning();
 	}
 
-	/*
-	  Assign GMMs components for each pixel.
-	*/
 	void GrabCutter::assignGMMsComponents( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, cv::Mat& compIdxs )
 	{
 		cv::Point p;
@@ -186,9 +172,6 @@ namespace visualsearch
 		}
 	}
 
-	/*
-	  Learn GMMs parameters.
-	*/
 	void GrabCutter::learnGMMs( const cv::Mat& img, const cv::Mat& mask, const cv::Mat& compIdxs, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM )
 	{
 		bgdGMM.initLearning();
@@ -214,9 +197,6 @@ namespace visualsearch
 		fgdGMM.endLearning();
 	}
 
-	/*
-	  Construct GCGraph
-	*/
 	void GrabCutter::constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, double lambda,
 						   const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
 						   GCGraph<double>& graph )
@@ -234,6 +214,7 @@ namespace visualsearch
 				cv::Vec3b color = img.at<cv::Vec3b>(p);
 
 				// set t-weights
+				// source: bg; sink: fg
 				double fromSource, toSink;
 				if( mask.at<uchar>(p) == cv::GC_PR_BGD || mask.at<uchar>(p) == cv::GC_PR_FGD )
 				{
@@ -277,9 +258,6 @@ namespace visualsearch
 		}
 	}
 
-	/*
-	  Estimate segmentation using MaxFlow algorithm
-	*/
 	void GrabCutter::estimateSegmentation( GCGraph<double>& graph, cv::Mat& mask )
 	{
 		graph.maxFlow();
@@ -300,6 +278,43 @@ namespace visualsearch
 	}
 
 
+	//////////////////////////////////////////////////////////////////////////
+
+	bool GrabCutter::predictMask(const cv::Mat& color_img, cv::Mat& mask, const cv::Rect& box, bool show)
+	{
+		mask.create(color_img.rows, color_img.cols, CV_8U);
+		mask.setTo(cv::GC_BGD);
+
+		cv::Vec3b redcolor(0,0,255);
+		cv::Vec3b bluecolor(255,0,0);
+		cv::Mat disp_mask(color_img.rows, color_img.cols, CV_8UC3);
+		disp_mask.setTo(cv::Vec3b(0,255,0));
+
+		// predict for pixels inside rect
+		for(int r=box.y; r<box.br().y; r++)
+		{
+			for(int c=box.x; c<box.br().x; c++)
+			{
+				cv::Vec3d cur_color = (cv::Vec3d)color_img.at<cv::Vec3b>(r,c);
+				double bg_prob = bgdGMM(cur_color);
+				double fg_prob = fgdGMM(cur_color);
+				mask.at<uchar>(r,c) = (bg_prob > fg_prob? cv::GC_PR_BGD: cv::GC_PR_FGD);
+				disp_mask.at<cv::Vec3b>(r,c) = (bg_prob > fg_prob? bluecolor: redcolor);
+			}
+		}
+		
+		if( show )
+		{
+			// visualize
+			cv::imshow("pred_mask", disp_mask);
+			cv::waitKey(10);
+		}
+
+		return true;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+	
 	bool GrabCutter::RunGrabCut( const cv::Mat& img, cv::Mat& mask, const cv::Rect& rect,
 		cv::Mat& bgdModel, cv::Mat& fgdModel,
 		int iterCount, int mode )
@@ -325,6 +340,7 @@ namespace visualsearch
 				initMaskWithRect( mask, img.size(), rect );
 			else // flag == GC_INIT_WITH_MASK
 				checkMask( img, mask );
+
 			initGMMs( img, mask, bgdGMM, fgdGMM );
 		}
 
@@ -344,9 +360,13 @@ namespace visualsearch
 		for( int i = 0; i < iterCount; i++ )
 		{
 			GCGraph<double> graph;
+			// assign each pixel to one of the component based on new mask
 			assignGMMsComponents( img, mask, bgdGMM, fgdGMM, compIdxs );
+			// re-estimate GMM model using the new mask
 			learnGMMs( img, mask, compIdxs, bgdGMM, fgdGMM );
+			// do graph-cut
 			constructGCGraph(img, mask, bgdGMM, fgdGMM, lambda, leftW, upleftW, upW, uprightW, graph );
+			// do segment prediction
 			estimateSegmentation( graph, mask );
 		}
 

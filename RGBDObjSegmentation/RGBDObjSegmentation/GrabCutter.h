@@ -43,6 +43,7 @@ namespace visualsearch
 
 		/*
 		Initialize mask using rectangular.
+		outside -> bg; inside -> pr_fg
 		*/
 		void initMaskWithRect( cv::Mat& mask, cv::Size imgSize, cv::Rect rect );
 
@@ -72,6 +73,14 @@ namespace visualsearch
 		Estimate segmentation using MaxFlow algorithm
 		*/
 		void estimateSegmentation( GCGraph<double>& graph, cv::Mat& mask );
+
+		//////////////////////////////////////////////////////////////////////////
+		// augmented methods
+
+		// predict label of fg / bg using existing models; outside box is bg
+		bool predictMask(const cv::Mat& color_img, cv::Mat& mask, const cv::Rect& box, bool show = false);
+
+		//////////////////////////////////////////////////////////////////////////
 
 		// run grabcut
 		bool RunGrabCut( const cv::Mat& img, cv::Mat& mask, const cv::Rect& rect,

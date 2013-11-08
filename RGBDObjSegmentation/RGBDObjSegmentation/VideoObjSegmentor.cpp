@@ -9,14 +9,14 @@ namespace rgbdvision
 
 	bool VideoObjSegmentor::ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight)
 	{
-		box.x = box.x - (int)(box.width * ratio / 2);
-		box.y = box.y - (int)(box.height * ratio / 2);
-		box.width = (int)(box.width * (1+ratio));
-		box.height = (int)(box.height * (1+ratio));
-		box.x = MAX(box.x, 0);
-		box.y = MAX(box.y, 0);
-		box.width = MIN(frames[i].cols-box.x-1, box.width);
-		box.height = MIN(frames[i].rows-box.y-1, box.height);
+		newBox.x = oldBox.x - (int)(oldBox.width * ratio / 2);
+		newBox.y = oldBox.y - (int)(oldBox.height * ratio / 2);
+		newBox.width = (int)(oldBox.width * (1+ratio));
+		newBox.height = (int)(oldBox.height * (1+ratio));
+		newBox.x = MAX(newBox.x, 0);
+		newBox.y = MAX(newBox.y, 0);
+		newBox.width = MIN(imgWidth-newBox.x-1, newBox.width);
+		newBox.height = MIN(imgHeight-newBox.y-1, newBox.height);
 
 		return true;
 	}
@@ -47,9 +47,9 @@ namespace rgbdvision
 		}
 
 		// draw box
-		cv::rectangle(disp_mask, box, CV_RGB(255,0,0));
+		/*cv::rectangle(disp_mask, box, CV_RGB(255,0,0));
 		cv::imshow("mask", disp_mask);
-		cv::waitKey(10);
+		cv::waitKey(10);*/
 
 		return true;
 
@@ -88,12 +88,12 @@ namespace rgbdvision
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
 		{
-			sprintf_s(str, "%03d.png", i);
+			sprintf_s(str, "%02d_color.png", i);
 			string imgfile = frame_dir + string(str);
 			frames[i-start_id] = cv::imread(imgfile);
 			cv::Size old_sz(frames[i-start_id].cols, frames[i-start_id].rows);
 			// resize
-			//cv::resize(frames[i-start_id], frames[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
+			cv::resize(frames[i-start_id], frames[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
 		}
 
 		return true;
@@ -123,11 +123,16 @@ namespace rgbdvision
 
 			// expand box by ratio
 			float ratio = 0.2f;
-			
+			cv::Rect newBox;
+			ExpandBox(box, newBox, ratio, frames[i].cols, frames[i].rows);
 
+			box = newBox;
 			cv::rectangle(disp_img, box, CV_RGB(0, 255, 0));
 			cv::imshow("cur_frame", disp_img);
-			cv::waitKey(10);
+
+			obj_segmentor.PredictSegmentMask(frames[i], fgMasks[i], box, true);
+
+			cv::waitKey(0);
 
 			obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
 

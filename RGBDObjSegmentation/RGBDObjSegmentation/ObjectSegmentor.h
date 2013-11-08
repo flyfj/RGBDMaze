@@ -56,6 +56,11 @@ namespace visualsearch
 		// tools
 		static void GrabcutMouseCallback(int event, int x, int y, int, void* params);
 
+		bool PredictSegmentMask(const cv::Mat& color_img, cv::Mat& mask, const cv::Rect& box, bool show = false)
+		{
+			return segmentor.predictMask(color_img, mask, box, show);
+		}
+
 		// model is used for continuous cut
 		bool RunGrabCut(const cv::Mat& color_img, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
 

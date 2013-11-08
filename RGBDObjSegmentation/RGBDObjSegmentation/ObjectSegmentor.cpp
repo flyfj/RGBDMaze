@@ -92,22 +92,22 @@ namespace visualsearch
 		if ( !ifcont )
 		{
 			// new iteration
-			segmentor.RunGrabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
+			segmentor.RunGrabCut(color_img, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
 		}
 		else
 		{
 			// continuous
 			// use box to create a initial mask without re-initialize the model
-			cut_mask.create(color_img.rows, color_img.cols, CV_8U);
+			/*cut_mask.create(color_img.rows, color_img.cols, CV_8U);
 			cut_mask.setTo(cv::GC_BGD);
-			cut_mask(box).setTo(cv::GC_PR_FGD);
-			segmentor.RunGrabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 4, cv::GC_EVAL);
+			cut_mask(box).setTo(cv::GC_PR_FGD);*/
+			segmentor.RunGrabCut(color_img, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
 		}
 		
 		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;
 
 		// visualize mask
-		fg_mask = cut_mask & 1;
+		fg_mask = fg_mask & 1;
 		cv::Mat trimap = color_img.clone();
 		// convert to rgba for transparent drawing
 		//cv::cvtColor(trimap, trimap, CV_BGR2BGRA);

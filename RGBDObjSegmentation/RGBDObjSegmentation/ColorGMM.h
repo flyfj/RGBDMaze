@@ -20,7 +20,9 @@ namespace visualsearch
 
 			ColorGMM() {}
 			ColorGMM( cv::Mat& _model );
+			// probability of color in the whole model (weighted sum)
 			double operator()( const cv::Vec3d color ) const;
+			// probability of color in ci component
 			double operator()( int ci, const cv::Vec3d color ) const;
 			int whichComponent( const cv::Vec3d color ) const;
 
