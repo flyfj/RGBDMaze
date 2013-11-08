@@ -22,7 +22,10 @@ namespace rgbdvision
 		// bounding box of all mask points
 		bool MaskBoundingBox(const cv::Mat& mask, cv::Rect& box);
 
+		// enlarge box by ratio for width and height
 		bool ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight);
+
+		bool OutputMaskToFile(ofstream& out, const cv::Mat& color_img, const cv::Mat& mask, bool hasProb = false);
 
 	public:
 		VideoObjSegmentor(void);

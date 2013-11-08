@@ -80,6 +80,37 @@ namespace rgbdvision
 		return true;
 	}
 
+	bool VideoObjSegmentor::OutputMaskToFile(ofstream& out, const cv::Mat& color_img, const cv::Mat& mask, bool hasProb)
+	{
+		if(mask.empty())
+		{
+			std::cerr<<"Empty mask."<<std::endl;
+			return false;
+		}
+
+		for(int r=0; r<mask.rows; r++)
+		{
+			for(int c=0; c<mask.cols; c++)
+			{
+				if(hasProb)
+				{
+					// TODO: implement this
+					cv::Vec3b cur_color = color_img.at<cv::Vec3b>(r,c);
+					//out<<(c==0? "": " ")<<(mask.at<uchar>(r,c)>0? )
+				}
+				else
+				{
+					out<<(c==0? "": " ")<<(int)mask.at<uchar>(r,c);
+				}
+			}
+			out<<std::endl;
+		}
+
+		return true;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+
 	bool VideoObjSegmentor::LoadVideoFrames(const string& frame_dir, int start_id, int end_id)
 	{
 		frames.clear();
@@ -88,7 +119,7 @@ namespace rgbdvision
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
 		{
-			sprintf_s(str, "%02d_color.png", i);
+			sprintf_s(str, "%d_color.png", i);
 			string imgfile = frame_dir + string(str);
 			frames[i-start_id] = cv::imread(imgfile);
 			cv::Size old_sz(frames[i-start_id].cols, frames[i-start_id].rows);
@@ -132,22 +163,34 @@ namespace rgbdvision
 
 			obj_segmentor.PredictSegmentMask(frames[i], fgMasks[i], box, true);
 
-			cv::waitKey(0);
+			cv::waitKey(10);
 
 			obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
 
-			// save to file
+			// update box for bg initialization on next frame
+			MaskBoundingBox(fgMasks[i], box);
+
+			// save segment image
 			sprintf_s(str, "seg%d.jpg", i);
 			string savefile = frame_dir + string(str);
 			cv::Mat trimap = frames[i].clone();
 			trimap.setTo(cv::Vec3b(0, 0, 255), fgMasks[i]);
-
+			// scale back for verification
+			cv::resize(trimap, trimap, cv::Size(trimap.cols*2, trimap.rows*2));
 			cv::imwrite(savefile, trimap);
+
+			// save segment data
+			// resize mask back
+			cv::resize(fgMasks[i], fgMasks[i], cv::Size(fgMasks[i].cols*2, fgMasks[i].rows*2));
+
+			sprintf_s(str, "seg%d.txt", i);
+			savefile = frame_dir + string(str);
+			std::ofstream out(savefile);
+			OutputMaskToFile(out, frames[i], fgMasks[i]);
 
 			cv::waitKey(10);
 
-			// update box
-			MaskBoundingBox(fgMasks[i], box);
+			std::cout<<"Finish frame "<<i<<std::endl<<std::endl;
 		}
 
 		return true;

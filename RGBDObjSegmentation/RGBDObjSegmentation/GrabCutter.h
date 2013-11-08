@@ -83,6 +83,7 @@ namespace visualsearch
 		//////////////////////////////////////////////////////////////////////////
 
 		// run grabcut
+		// mask is a 0/1 hard map
 		bool RunGrabCut( const cv::Mat& img, cv::Mat& mask, const cv::Rect& rect,
 			cv::Mat& bgdModel, cv::Mat& fgdModel,
 			int iterCount, int mode );
