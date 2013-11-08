@@ -84,12 +84,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ColorGMM.cpp" />
+    <ClCompile Include="GrabCutter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectSegmentor.cpp" />
     <ClCompile Include="VideoObjSegmentor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common_libs.h" />
+    <ClInclude Include="ColorGMM.h" />
+    <ClInclude Include="gcgraph.hpp" />
+    <ClInclude Include="GrabCutter.h" />
     <ClInclude Include="ObjectSegmentor.h" />
     <ClInclude Include="VideoObjSegmentor.h" />
   </ItemGroup>

@@ -7,13 +7,28 @@ namespace rgbdvision
 	{
 	}
 
+	bool VideoObjSegmentor::ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight)
+	{
+		box.x = box.x - (int)(box.width * ratio / 2);
+		box.y = box.y - (int)(box.height * ratio / 2);
+		box.width = (int)(box.width * (1+ratio));
+		box.height = (int)(box.height * (1+ratio));
+		box.x = MAX(box.x, 0);
+		box.y = MAX(box.y, 0);
+		box.width = MIN(frames[i].cols-box.x-1, box.width);
+		box.height = MIN(frames[i].rows-box.y-1, box.height);
+
+		return true;
+	}
+
 	bool VideoObjSegmentor::MaskBoundingBox(const cv::Mat& mask, cv::Rect& box)
 	{
 
 		// find biggest connected component as object mask
-		cv::Mat mask_back = mask.clone();
-		cv::imshow("mask", mask_back*255);
-		cv::waitKey(0);
+		cv::Mat mask_back, disp_mask;
+		mask_back = mask.clone() * 255;
+		cv::cvtColor(mask_back, disp_mask, CV_GRAY2BGR);
+
 		vector<vector<cv::Point> > contours;
 		vector<cv::Vec4i> hierarchy;
 		/// Find contours
@@ -30,6 +45,11 @@ namespace rgbdvision
 				maxarea = barea;
 			}
 		}
+
+		// draw box
+		cv::rectangle(disp_mask, box, CV_RGB(255,0,0));
+		cv::imshow("mask", disp_mask);
+		cv::waitKey(10);
 
 		return true;
 
@@ -68,12 +88,12 @@ namespace rgbdvision
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
 		{
-			sprintf_s(str, "%02d_color.png", i);
+			sprintf_s(str, "%03d.png", i);
 			string imgfile = frame_dir + string(str);
 			frames[i-start_id] = cv::imread(imgfile);
 			cv::Size old_sz(frames[i-start_id].cols, frames[i-start_id].rows);
 			// resize
-			cv::resize(frames[i-start_id], frames[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
+			//cv::resize(frames[i-start_id], frames[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
 		}
 
 		return true;
@@ -99,21 +119,14 @@ namespace rgbdvision
 		{
 			cv::Mat disp_img = frames[i].clone();
 			cv::rectangle(disp_img, box, CV_RGB(0, 0, 255));
-			cv::imshow("frame", disp_img);
+			cv::imshow("cur_frame", disp_img);
 
 			// expand box by ratio
 			float ratio = 0.2f;
-			box.x = box.x - (int)(box.width * ratio / 2);
-			box.y = box.y - (int)(box.height * ratio / 2);
-			box.width = (int)(box.width * (1+ratio));
-			box.height = (int)(box.height * (1+ratio));
-			box.x = MAX(box.x, 0);
-			box.y = MAX(box.y, 0);
-			box.width = MIN(frames[i].cols-box.x-1, box.width);
-			box.height = MIN(frames[i].rows-box.y-1, box.height);
+			
 
 			cv::rectangle(disp_img, box, CV_RGB(0, 255, 0));
-			cv::imshow("frame", disp_img);
+			cv::imshow("cur_frame", disp_img);
 			cv::waitKey(10);
 
 			obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
@@ -126,7 +139,7 @@ namespace rgbdvision
 
 			cv::imwrite(savefile, trimap);
 
-			cv::waitKey(0);
+			cv::waitKey(10);
 
 			// update box
 			MaskBoundingBox(fgMasks[i], box);

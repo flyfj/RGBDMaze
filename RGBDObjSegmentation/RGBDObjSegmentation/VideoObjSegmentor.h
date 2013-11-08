@@ -22,6 +22,8 @@ namespace rgbdvision
 		// bounding box of all mask points
 		bool MaskBoundingBox(const cv::Mat& mask, cv::Rect& box);
 
+		bool ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight);
+
 	public:
 		VideoObjSegmentor(void);
 

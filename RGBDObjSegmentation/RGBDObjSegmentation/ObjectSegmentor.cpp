@@ -92,8 +92,8 @@ namespace visualsearch
 		if ( !ifcont )
 		{
 			// new iteration
-			cv::grabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
-		} 
+			segmentor.RunGrabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
+		}
 		else
 		{
 			// continuous
@@ -101,7 +101,7 @@ namespace visualsearch
 			cut_mask.create(color_img.rows, color_img.cols, CV_8U);
 			cut_mask.setTo(cv::GC_BGD);
 			cut_mask(box).setTo(cv::GC_PR_FGD);
-			cv::grabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 4, cv::GC_EVAL);
+			segmentor.RunGrabCut(color_img, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 4, cv::GC_EVAL);
 		}
 		
 		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;

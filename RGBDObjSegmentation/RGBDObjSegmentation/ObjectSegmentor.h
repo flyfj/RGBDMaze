@@ -6,6 +6,7 @@
 #pragma once
 
 #include "common_libs.h"
+#include "GrabCutter.h"
 
 
 namespace visualsearch
@@ -36,6 +37,8 @@ namespace visualsearch
 		static cv::Point grabStartPt;
 
 		static cv::Mat toProcessImg;	// for grabcut use, better not static
+
+		GrabCutter segmentor;
 
 		GrabCutModel grabcutModel;
 
