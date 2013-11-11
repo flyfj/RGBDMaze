@@ -153,7 +153,7 @@ namespace rgbdvision
 			cv::imshow("cur_frame", disp_img);
 
 			// expand box by ratio
-			float ratio = 0.2f;
+			float ratio = 0.3f;
 			cv::Rect newBox;
 			ExpandBox(box, newBox, ratio, frames[i].cols, frames[i].rows);
 
@@ -171,8 +171,8 @@ namespace rgbdvision
 			MaskBoundingBox(fgMasks[i], box);
 
 			// save segment image
-			sprintf_s(str, "seg%d.jpg", i);
-			string savefile = frame_dir + string(str);
+			sprintf_s(str, "seg%d", i+start_id);
+			string savefile = frame_dir + string(str) + ".jpg";
 			cv::Mat trimap = frames[i].clone();
 			trimap.setTo(cv::Vec3b(0, 0, 255), fgMasks[i]);
 			// scale back for verification
@@ -183,8 +183,7 @@ namespace rgbdvision
 			// resize mask back
 			cv::resize(fgMasks[i], fgMasks[i], cv::Size(fgMasks[i].cols*2, fgMasks[i].rows*2));
 
-			sprintf_s(str, "seg%d.txt", i);
-			savefile = frame_dir + string(str);
+			savefile = frame_dir + string(str) + ".txt";
 			std::ofstream out(savefile);
 			OutputMaskToFile(out, frames[i], fgMasks[i]);
 
