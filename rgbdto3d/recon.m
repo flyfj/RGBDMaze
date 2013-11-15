@@ -2,15 +2,15 @@
 
 %%
 
-data_dir = 'F:\test\processed_mug2\';
+data_dir = 'F:\test\NewlyAlignedRGB_mug\NewlyAlignedRGB_mug\';
 
-start_id = 24;
-end_id = 126;
+start_id = 100;
+end_id = 120;
 
 imgw = 640;
 imgh = 480;
 
-invF = [594.21 0 320; 0 591.04 240; 0 0 1];
+invF = [594.21 0 320/594.21; 0 591.04 240/594.21; 0 0 1];
 
 model_data = [];
 

@@ -9,10 +9,10 @@ int main()
 {
 	rgbdvision::VideoObjSegmentor vobj_segmentor;
 
-	string lab_dir = "F:\\test\\processed_mug2\\";
+	string lab_dir = "F:\\test\\NewlyAlignedRGB_mug\\NewlyAlignedRGB_mug\\";
 	string video_dir = "C:\\Users\\vv\\Dropbox\\Experiment data\\book_processed\\book_processed\\";	//"C:\\Users\\jiefeng\\Documents\\MATLAB\\";
 
-	vobj_segmentor.DoSegmentation(lab_dir, 23, 216);
+	vobj_segmentor.DoSegmentation(lab_dir, 22, 216);
 
 	return 0;
 }
