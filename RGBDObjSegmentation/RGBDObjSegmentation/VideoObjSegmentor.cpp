@@ -109,6 +109,26 @@ namespace rgbdvision
 		return true;
 	}
 
+	bool VideoObjSegmentor::LoadDepthmap(const string& filename, cv::Mat& dmap)
+	{
+		int imgw = 640;
+		int imgh = 480;
+		ifstream in(filename);
+		if( !in.is_open() )
+			return false;
+		
+		dmap.create(imgh, imgw, CV_32F);
+		for(int r=0; r<imgh; r++)
+		{
+			for(int c=0; c<imgw; c++)
+			{
+				in>>dmap.at<float>(r,c);
+			}
+		}
+
+		return true;
+	}
+
 	//////////////////////////////////////////////////////////////////////////
 
 	bool VideoObjSegmentor::LoadVideoFrames(const string& frame_dir, int start_id, int end_id)
@@ -116,15 +136,28 @@ namespace rgbdvision
 		frames.clear();
 		frames.resize(end_id-start_id+1);
 
+		dmaps.clear();
+		dmaps.resize(end_id-start_id+1);
+
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
 		{
+			// load color frame
 			sprintf_s(str, "%d_color.png", i);
 			string imgfile = frame_dir + string(str);
 			frames[i-start_id] = cv::imread(imgfile);
-			cv::Size old_sz(frames[i-start_id].cols, frames[i-start_id].rows);
+
+			// load depth map
+			sprintf_s(str, "%d_depth.txt", i);
+			string dmapfile = frame_dir + string(str);
+			LoadDepthmap(dmapfile, dmaps[i-start_id]);
+
 			// resize
+			cv::Size old_sz(frames[i-start_id].cols, frames[i-start_id].rows);
 			cv::resize(frames[i-start_id], frames[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
+			cv::resize(dmaps[i-start_id], dmaps[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
+
+			cout<<"Loaded "<<i<<endl;
 		}
 
 		return true;
@@ -139,7 +172,7 @@ namespace rgbdvision
 		fgMasks.resize(frames.size());
 
 		// user helps cut first frame
-		obj_segmentor.InteractiveCut(frames[0], fgMasks[0]);
+		obj_segmentor.InteractiveCut(frames[0], dmaps[0], fgMasks[0]);
 
 		// propagate to other frames
 		cv::Rect box;
@@ -165,7 +198,7 @@ namespace rgbdvision
 
 			cv::waitKey(10);
 
-			obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
+			obj_segmentor.RunGrabCut(frames[i], dmaps[i], fgMasks[i], box, true);
 
 			// update box for bg initialization on next frame
 			MaskBoundingBox(fgMasks[i], box);

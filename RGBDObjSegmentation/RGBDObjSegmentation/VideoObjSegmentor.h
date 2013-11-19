@@ -16,6 +16,7 @@ namespace rgbdvision
 	private:
 
 		std::vector<cv::Mat> frames;
+		std::vector<cv::Mat> dmaps;
 		std::vector<cv::Mat> fgMasks;
 		visualsearch::ObjectSegmentor obj_segmentor;
 
@@ -26,6 +27,8 @@ namespace rgbdvision
 		bool ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight);
 
 		bool OutputMaskToFile(ofstream& out, const cv::Mat& color_img, const cv::Mat& mask, bool hasProb = false);
+
+		bool LoadDepthmap(const string& filename, cv::Mat& dmap);
 
 	public:
 		VideoObjSegmentor(void);

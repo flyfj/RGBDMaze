@@ -13,6 +13,15 @@
 namespace visualsearch
 {
 
+	enum GrabCutType
+	{
+		GC_RGB,
+		GC_RGBD
+	};
+
+
+	// class for grabcut algorithm
+	// support rgbd, depth in float
 	class GrabCutter
 	{
 	private:
@@ -30,11 +39,17 @@ namespace visualsearch
 		*/
 		double calcBeta( const cv::Mat& img );
 
+		// rgbd version
+		double calcBetaRGBD( const cv::Mat& img, const cv::Mat& dmap );
+
 		/*
 		Calculate weights of non-terminal vertices of graph.
 		beta and gamma - parameters of GrabCut algorithm.
+		neighbor weights
 		*/
 		void calcNWeights( const cv::Mat& img, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma );
+
+		void calcNWeightsRGBD( const cv::Mat& img, const cv::Mat& dmap, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma );
 
 		/*
 		Check size, type and element values of mask matrix.
@@ -88,6 +103,11 @@ namespace visualsearch
 			cv::Mat& bgdModel, cv::Mat& fgdModel,
 			int iterCount, int mode );
 
+
+		// rgbd version
+		bool RunGrabCut( const cv::Mat& img, const cv::Mat& dmap, cv::Mat& mask, const cv::Rect& rect,
+			cv::Mat& bgdModel, cv::Mat& fgdModel,
+			int iterCount, int mode );
 
 	};
 }

@@ -12,7 +12,7 @@ int main()
 	string lab_dir = "F:\\test\\NewlyAlignedRGB_mug\\NewlyAlignedRGB_mug\\";
 	string video_dir = "C:\\Users\\vv\\Dropbox\\Experiment data\\book_processed\\book_processed\\";	//"C:\\Users\\jiefeng\\Documents\\MATLAB\\";
 
-	vobj_segmentor.DoSegmentation(lab_dir, 22, 216);
+	vobj_segmentor.DoSegmentation(lab_dir, 196, 196);
 
 	return 0;
 }

@@ -82,6 +82,8 @@ namespace visualsearch
 		}
 	}
 
+	//////////////////////////////////////////////////////////////////////////
+
 	bool ObjectSegmentor::RunGrabCut(const cv::Mat& color_img, cv::Mat& fg_mask, const cv::Rect& box, 
 		bool ifcont)
 	{
@@ -119,6 +121,40 @@ namespace visualsearch
 		return true;
 	}
 
+	bool ObjectSegmentor::RunGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont)
+	{
+		// run grabcut
+		cout<<"Running grabcut..."<<endl;
+		double start_t = cv::getTickCount();
+		cv::Mat cut_mask;
+		if ( !ifcont )
+		{
+			// new iteration
+			segmentor.RunGrabCut(color_img, dmap, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
+		}
+		else
+		{
+			// continuous
+			segmentor.RunGrabCut(color_img, dmap, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
+		}
+		
+		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;
+
+		// visualize mask
+		fg_mask = fg_mask & 1;
+		cv::Mat trimap = color_img.clone();
+		// convert to rgba for transparent drawing
+		//cv::cvtColor(trimap, trimap, CV_BGR2BGRA);
+		trimap.setTo(cv::Vec3b(0, 0, 255), fg_mask);
+
+		cv::imshow("Segment", trimap);
+		cv::waitKey(10);
+
+		return true;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+
 	bool ObjectSegmentor::InteractiveCut(const cv::Mat& img, cv::Mat& fg_mask)
 	{
 		// reset
@@ -147,6 +183,46 @@ namespace visualsearch
 				{
 					// do grabcut
 					RunGrabCut(toProcessImg, fg_mask, grabBox);
+					ifCut = true;
+				}
+			}
+			if(res == 'q')
+			{
+				break;
+			}
+		}
+
+		return true;
+	}
+
+	bool ObjectSegmentor::InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, cv::Mat& fg_mask)
+	{
+		// reset
+		ResetGrabcut();
+
+		img.copyTo(toProcessImg);
+
+		// set up mouse callback
+		ShowGrabbedImage();	// must show window first
+		cv::setMouseCallback("Grab", GrabcutMouseCallback);
+
+		bool ifCut = false;
+
+		while(1)
+		{
+			int res = cv::waitKey(0);
+			if(res == 'r')
+			{
+				grabState = GRAB_NOT_SET;
+				ShowGrabbedImage();
+				ifCut = false;
+			}
+			if(res == 'n')
+			{
+				if(ObjectSegmentor::grabState == GRAB_SET)
+				{
+					// do grabcut
+					RunGrabCut(toProcessImg, dmap, fg_mask, grabBox);
 					ifCut = true;
 				}
 			}

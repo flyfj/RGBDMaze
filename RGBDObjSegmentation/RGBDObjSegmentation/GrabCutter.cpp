@@ -6,6 +6,7 @@ namespace visualsearch
 	
 	double GrabCutter::calcBeta( const cv::Mat& img )
 	{
+		// compute expectation of color difference between two neighboring pixels
 		double beta = 0;
 		for( int y = 0; y < img.rows; y++ )
 		{
@@ -38,6 +39,45 @@ namespace visualsearch
 			beta = 0;
 		else
 			beta = 1.f / (2 * beta/(4*img.cols*img.rows - 3*img.cols - 3*img.rows + 2) );
+
+		return beta;
+	}
+
+	double GrabCutter::calcBetaRGBD( const cv::Mat& img, const cv::Mat& dmap )
+	{
+		// compute expectation of color difference between two neighboring pixels
+		double beta = 0;
+		for( int y = 0; y < dmap.rows; y++ )
+		{
+			for( int x = 0; x < dmap.cols; x++ )
+			{
+				float dval = dmap.at<float>(y,x);
+				if( x>0 ) // left
+				{
+					float diff = dval - dmap.at<float>(y,x-1);
+					beta += diff*diff;
+				}
+				if( y>0 && x>0 ) // upleft
+				{
+					float diff = dval - dmap.at<float>(y-1,x-1);
+					beta += diff*diff;
+				}
+				if( y>0 ) // up
+				{
+					float diff = dval - dmap.at<float>(y-1,x);
+					beta += diff*diff;
+				}
+				if( y>0 && x<img.cols-1) // upright
+				{
+					float diff = dval - dmap.at<float>(y-1,x+1);
+					beta += diff*diff;
+				}
+			}
+		}
+		if( beta <= std::numeric_limits<double>::epsilon() )
+			beta = 0;
+		else
+			beta = 1.f / (2 * beta/(4*dmap.cols*dmap.rows - 3*dmap.cols - 3*dmap.rows + 2) );
 
 		return beta;
 	}
@@ -85,6 +125,52 @@ namespace visualsearch
 			}
 		}
 	}
+
+	void GrabCutter::calcNWeightsRGBD( const cv::Mat& img, const cv::Mat& dmap, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma )
+	{
+		const double gammaDivSqrt2 = gamma / std::sqrt(2.0f);
+		leftW.create( dmap.rows, dmap.cols, CV_64FC1 );
+		upleftW.create( dmap.rows, dmap.cols, CV_64FC1 );
+		upW.create( dmap.rows, dmap.cols, CV_64FC1 );
+		uprightW.create( dmap.rows, dmap.cols, CV_64FC1 );
+		for( int y = 0; y < dmap.rows; y++ )
+		{
+			for( int x = 0; x < dmap.cols; x++ )
+			{
+				float dval = dmap.at<float>(y,x);
+				if( x-1>=0 ) // left
+				{
+					float diff = dval - dmap.at<float>(y,x-1);
+					leftW.at<double>(y,x) = gamma * exp(-beta*diff*diff);
+				}
+				else
+					leftW.at<double>(y,x) = 0;
+				if( x-1>=0 && y-1>=0 ) // upleft
+				{
+					float diff = dval - dmap.at<float>(y-1,x-1);
+					upleftW.at<double>(y,x) = gammaDivSqrt2 * exp(-beta*diff*diff);
+				}
+				else
+					upleftW.at<double>(y,x) = 0;
+				if( y-1>=0 ) // up
+				{
+					float diff = dval - dmap.at<float>(y-1,x);
+					upW.at<double>(y,x) = gamma * exp(-beta*diff*diff);
+				}
+				else
+					upW.at<double>(y,x) = 0;
+				if( x+1<img.cols && y-1>=0 ) // upright
+				{
+					float diff = dval - dmap.at<float>(y-1,x+1);
+					uprightW.at<double>(y,x) = gammaDivSqrt2 * exp(-beta*diff*diff);
+				}
+				else
+					uprightW.at<double>(y,x) = 0;
+			}
+		}
+	}
+
+	//////////////////////////////////////////////////////////////////////////
 
 	void GrabCutter::checkMask( const cv::Mat& img, const cv::Mat& mask )
 	{
@@ -356,6 +442,75 @@ namespace visualsearch
 
 		cv::Mat leftW, upleftW, upW, uprightW;
 		calcNWeights( img, leftW, upleftW, upW, uprightW, beta, gamma );
+		// to add depth here
+
+
+		for( int i = 0; i < iterCount; i++ )
+		{
+			GCGraph<double> graph;
+			// assign each pixel to one of the component based on new mask
+			assignGMMsComponents( img, mask, bgdGMM, fgdGMM, compIdxs );
+			// re-estimate GMM model using the new mask
+			learnGMMs( img, mask, compIdxs, bgdGMM, fgdGMM );
+			// do graph-cut
+			constructGCGraph(img, mask, bgdGMM, fgdGMM, lambda, leftW, upleftW, upW, uprightW, graph );
+			// do segment prediction
+			estimateSegmentation( graph, mask );
+		}
+
+		return true;
+	}
+
+	bool GrabCutter::RunGrabCut( const cv::Mat& img, const cv::Mat& dmap, cv::Mat& mask, 
+		const cv::Rect& rect, cv::Mat& bgdModel, cv::Mat& fgdModel, 
+		int iterCount, int mode )
+	{
+		if( img.empty() || dmap.empty() )
+		{
+			std::cerr<<"image / dmap is empty"<<std::endl;
+			return false;
+		}
+		if( img.type() != CV_8UC3 )
+		{
+			std::cerr<<"image mush have CV_8UC3 type"<<std::endl;
+			return false;
+		}
+		if( dmap.type() != CV_32F )
+		{
+			std::cerr<<"depth map must have CV_32F type"<<std::endl;
+			return false;
+		}
+		
+
+		bgdGMM = learners::ColorGMM( bgdModel );
+		fgdGMM = learners::ColorGMM( fgdModel );
+		cv::Mat compIdxs( img.size(), CV_32SC1 );
+
+		if( mode == cv::GC_INIT_WITH_RECT || mode == cv::GC_INIT_WITH_MASK )
+		{
+			if( mode == cv::GC_INIT_WITH_RECT )
+				initMaskWithRect( mask, img.size(), rect );
+			else // flag == GC_INIT_WITH_MASK
+				checkMask( img, mask );
+
+			initGMMs( img, mask, bgdGMM, fgdGMM );
+		}
+
+		if( iterCount <= 0)
+			return false;
+
+		if( mode == cv::GC_EVAL )
+			checkMask( img, mask );
+
+		const double gamma = 50;
+		const double lambda = 9*gamma;
+		const double beta = calcBetaRGBD(img, dmap); //calcBeta( img );
+
+		cv::Mat leftW, upleftW, upW, uprightW;
+		calcNWeightsRGBD(img, dmap, leftW, upleftW, upW, uprightW, beta, gamma);
+		//calcNWeights( img, leftW, upleftW, upW, uprightW, beta, gamma );
+		// to add depth here
+
 
 		for( int i = 0; i < iterCount; i++ )
 		{

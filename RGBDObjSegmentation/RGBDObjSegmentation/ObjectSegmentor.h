@@ -64,8 +64,12 @@ namespace visualsearch
 		// model is used for continuous cut
 		bool RunGrabCut(const cv::Mat& color_img, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
 
+		bool RunGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
+
 		// interactive cut
 		bool InteractiveCut(const cv::Mat& img, cv::Mat& fg_mask);
+
+		bool InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, cv::Mat& fg_mask);
 	};
 }
 
