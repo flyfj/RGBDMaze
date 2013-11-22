@@ -11,6 +11,14 @@
 
 namespace rgbdvision
 {
+
+	enum SegmentInput
+	{
+		SEG_RGB,
+		SEG_RGBD,
+		SEG_DEPTH
+	};
+
 	class VideoObjSegmentor
 	{
 	private:
@@ -30,12 +38,14 @@ namespace rgbdvision
 
 		bool LoadDepthmap(const string& filename, cv::Mat& dmap);
 
+		bool ConvertDmapForDisplay(const cv::Mat& dmap, cv::Mat& dmap_disp);
+
 	public:
 		VideoObjSegmentor(void);
 
-		bool LoadVideoFrames(const string& frame_dir, int start_id, int end_id);
+		bool LoadVideoFrames(const string& frame_dir, int start_id, int end_id, SegmentInput seg_input);
 
-		bool DoSegmentation(const string& frame_dir, int start_id, int end_id);
+		bool DoSegmentation(const string& frame_dir, int start_id, int end_id, SegmentInput seg_input);
 	};
 }
 

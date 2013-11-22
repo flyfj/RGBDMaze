@@ -130,12 +130,12 @@ namespace visualsearch
 		if ( !ifcont )
 		{
 			// new iteration
-			segmentor.RunGrabCut(color_img, dmap, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
+			segmentor.RunGrabCut(color_img, dmap, fg_mask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
 		}
 		else
 		{
 			// continuous
-			segmentor.RunGrabCut(color_img, dmap, fg_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
+			segmentor.RunGrabCut(color_img, dmap, fg_mask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
 		}
 		
 		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;
