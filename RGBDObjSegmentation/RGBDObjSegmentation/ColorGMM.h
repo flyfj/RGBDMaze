@@ -71,6 +71,14 @@ namespace visualsearch
 		private:
 			void calcInverseCovAndDeterm( int ci );
 			cv::Mat model;
+			
+			// replace one row matrix model with separate matrices for each parameter type
+			vector<cv::Mat> means;
+			vector<cv::Mat> covs;
+			vector<double> covDets;
+			vector<cv::Mat> inv_covs;
+			vector<double> weights;
+
 			double* coefs;
 			double* mean;
 			double* cov;
