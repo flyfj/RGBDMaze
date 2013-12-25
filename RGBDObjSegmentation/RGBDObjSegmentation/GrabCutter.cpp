@@ -3,7 +3,7 @@
 
 namespace visualsearch
 {
-	
+
 	double GrabCutter::calcBeta( const cv::Mat& img )
 	{
 		// compute expectation of color difference between two neighboring pixels
@@ -90,6 +90,8 @@ namespace visualsearch
 
 		return beta;
 	}
+
+	//////////////////////////////////////////////////////////////////////////
 
 	void GrabCutter::calcNWeights( const cv::Mat& img, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma )
 	{
@@ -225,45 +227,6 @@ namespace visualsearch
 
 	//////////////////////////////////////////////////////////////////////////
 
-	void GrabCutter::initGMMs( const cv::Mat& img, const cv::Mat& mask, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM )
-	{
-		const int kMeansItCount = 10;
-		const int kMeansType = cv::KMEANS_PP_CENTERS;
-
-		cv::Mat bgdLabels, fgdLabels;
-		vector<cv::Vec3f> bgdSamples, fgdSamples;
-		cv::Point p;
-		// separate bg and fg samples
-		for( p.y = 0; p.y < img.rows; p.y++ )
-		{
-			for( p.x = 0; p.x < img.cols; p.x++ )
-			{
-				if( mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD )
-					bgdSamples.push_back( (cv::Vec3f)img.at<cv::Vec3b>(p) );
-				else // GC_FGD | GC_PR_FGD
-					fgdSamples.push_back( (cv::Vec3f)img.at<cv::Vec3b>(p) );
-			}
-		}
-		CV_Assert( !bgdSamples.empty() && !fgdSamples.empty() );
-
-		cv::Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
-		kmeans( _bgdSamples, learners::ColorGMM::componentsCount, bgdLabels,
-				cv::TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
-		cv::Mat _fgdSamples( (int)fgdSamples.size(), 3, CV_32FC1, &fgdSamples[0][0] );
-		kmeans( _fgdSamples, learners::ColorGMM::componentsCount, fgdLabels,
-				cv::TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
-
-		bgdGMM.initLearning();
-		for( int i = 0; i < (int)bgdSamples.size(); i++ )
-			bgdGMM.addSample( bgdLabels.at<int>(i,0), bgdSamples[i] );
-		bgdGMM.endLearning();
-
-		fgdGMM.initLearning();
-		for( int i = 0; i < (int)fgdSamples.size(); i++ )
-			fgdGMM.addSample( fgdLabels.at<int>(i,0), fgdSamples[i] );
-		fgdGMM.endLearning();
-	}
-
 	void GrabCutter::initGMMs( const cv::Mat& img, const cv::Mat& mask, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM )
 	{
 		const int kMeansItCount = 10;
@@ -311,13 +274,13 @@ namespace visualsearch
 		fgdGMM.endLearning();
 	}
 
-	void GrabCutter::initDepthGMMs( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, learners::ColorGMM& bgdDepthGMM, learners::ColorGMM& fgdDepthGMM )
+	void GrabCutter::initRGBDGMMs( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM )
 	{
 		const int kMeansItCount = 10;
 		const int kMeansType = cv::KMEANS_PP_CENTERS;
 
 		cv::Mat bgdDepthLabels, fgdDepthLabels;
-		vector<cv::Vec3f> bgdDepthSamples, fgdDepthSamples;
+		vector<cv::Vec4f> bgdDepthSamples, fgdDepthSamples;
 		cv::Point p;
 		// separate bg and fg samples
 		for( p.y = 0; p.y < dmap.rows; p.y++ )
@@ -327,48 +290,37 @@ namespace visualsearch
 				if(dmask.at<uchar>(p) <= 0)
 					continue;
 
-				float val = dmap.at<float>(p);
+				float dval = dmap.at<float>(p);
+				cv::Vec3f colorval = (cv::Vec3f)color_img.at<cv::Vec3b>(p);
 				if( mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD )
-					bgdDepthSamples.push_back( cv::Vec3f(val, val, val) );
+					bgdDepthSamples.push_back( cv::Vec4f(colorval.val[0], colorval.val[1], colorval.val[2], dval) );
 				else // GC_FGD | GC_PR_FGD
-					fgdDepthSamples.push_back( cv::Vec3f(val, val, val) );
+					fgdDepthSamples.push_back( cv::Vec4f(colorval.val[0], colorval.val[1], colorval.val[2], dval) );
 			}
 		}
 		CV_Assert( !bgdDepthSamples.empty() && !fgdDepthSamples.empty() );
 
-		cv::Mat _bgdSamples( (int)bgdDepthSamples.size(), 3, CV_32FC1, &bgdDepthSamples[0][0] );
-		kmeans( _bgdSamples, learners::ColorGMM::componentsCount, bgdDepthLabels,
+		cv::Mat _bgdSamples( (int)bgdDepthSamples.size(), learners::GeneralGMM::featureDim, CV_32FC1, &bgdDepthSamples[0][0] );
+		kmeans( _bgdSamples, learners::GeneralGMM::componentsCount, bgdDepthLabels,
 			cv::TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
-		cv::Mat _fgdSamples( (int)bgdDepthSamples.size(), 3, CV_32FC1, &fgdDepthSamples[0][0] );
-		kmeans( _fgdSamples, learners::ColorGMM::componentsCount, fgdDepthLabels,
+		cv::Mat _fgdSamples( (int)fgdDepthSamples.size(), learners::GeneralGMM::featureDim, CV_32FC1, &fgdDepthSamples[0][0] );
+		kmeans( _fgdSamples, learners::GeneralGMM::componentsCount, fgdDepthLabels,
 			cv::TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
 
-		bgdDepthGMM.initLearning();
+		bgdGMM.initLearning();
 		for( int i = 0; i < (int)bgdDepthSamples.size(); i++ )
-			bgdDepthGMM.addSample( bgdDepthLabels.at<int>(i,0), bgdDepthSamples[i] );
-		bgdDepthGMM.endLearning();
+			bgdGMM.addSample( bgdDepthLabels.at<int>(i,0), 
+			ConvertVec2Mat(bgdDepthSamples[i].val[0], bgdDepthSamples[i].val[1], bgdDepthSamples[i].val[2], bgdDepthSamples[i].val[3]) );
+		bgdGMM.endLearning();
 
-		fgdDepthGMM.initLearning();
+		fgdGMM.initLearning();
 		for( int i = 0; i < (int)fgdDepthSamples.size(); i++ )
-			fgdDepthGMM.addSample( fgdDepthLabels.at<int>(i,0), fgdDepthSamples[i] );
-		fgdDepthGMM.endLearning();
+			fgdGMM.addSample( fgdDepthLabels.at<int>(i,0), 
+			ConvertVec2Mat(fgdDepthSamples[i].val[0], fgdDepthSamples[i].val[1], fgdDepthSamples[i].val[2], fgdDepthSamples[i].val[3]) );
+		fgdGMM.endLearning();
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-
-	void GrabCutter::assignGMMsComponents( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, cv::Mat& compIdxs )
-	{
-		cv::Point p;
-		for( p.y = 0; p.y < img.rows; p.y++ )
-		{
-			for( p.x = 0; p.x < img.cols; p.x++ )
-			{
-				cv::Vec3d color = img.at<cv::Vec3b>(p);
-				compIdxs.at<int>(p) = mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD ?
-					bgdGMM.whichComponent(color) : fgdGMM.whichComponent(color);
-			}
-		}
-	}
 
 	void GrabCutter::assignGMMsComponents( const cv::Mat& img, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, cv::Mat& compIdxs )
 	{
@@ -384,7 +336,7 @@ namespace visualsearch
 		}
 	}
 
-	void GrabCutter::assignDepthGMMsComponents( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::ColorGMM& bgdDepthGMM, const learners::ColorGMM& fgdDepthGMM, cv::Mat& compIdxs )
+	void GrabCutter::assignRGBDGMMsComponents( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, cv::Mat& compIdxs )
 	{
 		cv::Point p;
 		for( p.y = 0; p.y < dmap.rows; p.y++ )
@@ -394,40 +346,16 @@ namespace visualsearch
 				if( dmask.at<uchar>(p) <= 0 )
 					continue;
 
-				float val = dmap.at<float>(p);
-				cv::Vec3d color(val, val, val);
+				float dval = dmap.at<float>(p);
+				cv::Vec3d color = (cv::Vec3d)color_img.at<cv::Vec3b>(p);
+				cv::Mat samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
 				compIdxs.at<int>(p) = mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD ?
-					bgdDepthGMM.whichComponent(color) : fgdDepthGMM.whichComponent(color);
+					bgdGMM.whichComponent(samp) : fgdGMM.whichComponent(samp);
 			}
 		}
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-
-	void GrabCutter::learnGMMs( const cv::Mat& img, const cv::Mat& mask, const cv::Mat& compIdxs, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM )
-	{
-		bgdGMM.initLearning();
-		fgdGMM.initLearning();
-		cv::Point p;
-		for( int ci = 0; ci < learners::ColorGMM::componentsCount; ci++ )
-		{
-			for( p.y = 0; p.y < img.rows; p.y++ )
-			{
-				for( p.x = 0; p.x < img.cols; p.x++ )
-				{
-					if( compIdxs.at<int>(p) == ci )
-					{
-						if( mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD )
-							bgdGMM.addSample( ci, img.at<cv::Vec3b>(p) );
-						else
-							fgdGMM.addSample( ci, img.at<cv::Vec3b>(p) );
-					}
-				}
-			}
-		}
-		bgdGMM.endLearning();
-		fgdGMM.endLearning();
-	}
 
 	void GrabCutter::learnGMMs( const cv::Mat& img, const cv::Mat& mask, const cv::Mat& compIdxs, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM )
 	{
@@ -454,12 +382,12 @@ namespace visualsearch
 		fgdGMM.endLearning();
 	}
 
-	void GrabCutter::learnDepthGMMs( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const cv::Mat& compIdxs, learners::ColorGMM& bgdDepthGMM, learners::ColorGMM& fgdDepthGMM )
+	void GrabCutter::learnRGBDGMMs( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const cv::Mat& compIdxs, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM )
 	{
-		bgdDepthGMM.initLearning();
-		fgdDepthGMM.initLearning();
+		bgdGMM.initLearning();
+		fgdGMM.initLearning();
 		cv::Point p;
-		for( int ci = 0; ci < learners::ColorGMM::componentsCount; ci++ )
+		for( int ci = 0; ci < learners::GeneralGMM::componentsCount; ci++ )
 		{
 			for( p.y = 0; p.y < dmap.rows; p.y++ )
 			{
@@ -470,81 +398,22 @@ namespace visualsearch
 
 					if( compIdxs.at<int>(p) == ci )
 					{
-						float val = dmap.at<float>(p);
+						float dval = dmap.at<float>(p);
+						cv::Vec3d color = (cv::Vec3d)color_img.at<cv::Vec3b>(p);
+						cv::Mat samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
 						if( mask.at<uchar>(p) == cv::GC_BGD || mask.at<uchar>(p) == cv::GC_PR_BGD )
-							bgdDepthGMM.addSample( ci, cv::Vec3d(val, val, val) );
+							bgdGMM.addSample( ci, samp );
 						else
-							fgdDepthGMM.addSample( ci, cv::Vec3d(val, val, val) );
+							fgdGMM.addSample( ci, samp );
 					}
 				}
 			}
 		}
-		bgdDepthGMM.endLearning();
-		fgdDepthGMM.endLearning();
+		bgdGMM.endLearning();
+		fgdGMM.endLearning();
 	}
 
 	//////////////////////////////////////////////////////////////////////////
-
-	void GrabCutter::constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, double lambda,
-						   const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
-						   GCGraph<double>& graph )
-	{
-		int vtxCount = img.cols*img.rows,
-			edgeCount = 2*(4*img.cols*img.rows - 3*(img.cols + img.rows) + 2);
-		graph.create(vtxCount, edgeCount);
-		cv::Point p;
-		for( p.y = 0; p.y < img.rows; p.y++ )
-		{
-			for( p.x = 0; p.x < img.cols; p.x++)
-			{
-				// add node
-				int vtxIdx = graph.addVtx();
-				cv::Vec3b color = img.at<cv::Vec3b>(p);
-
-				// set t-weights
-				// source: bg; sink: fg
-				double fromSource, toSink;
-				if( mask.at<uchar>(p) == cv::GC_PR_BGD || mask.at<uchar>(p) == cv::GC_PR_FGD )
-				{
-					fromSource = -log( bgdGMM(color) );
-					toSink = -log( fgdGMM(color) );
-				}
-				else if( mask.at<uchar>(p) == cv::GC_BGD )
-				{
-					fromSource = 0;
-					toSink = lambda;
-				}
-				else // GC_FGD
-				{
-					fromSource = lambda;
-					toSink = 0;
-				}
-				graph.addTermWeights( vtxIdx, fromSource, toSink );
-
-				// set n-weights
-				if( p.x>0 )
-				{
-					double w = leftW.at<double>(p);
-					graph.addEdges( vtxIdx, vtxIdx-1, w, w );
-				}
-				if( p.x>0 && p.y>0 )
-				{
-					double w = upleftW.at<double>(p);
-					graph.addEdges( vtxIdx, vtxIdx-img.cols-1, w, w );
-				}
-				if( p.y>0 )
-				{
-					double w = upW.at<double>(p);
-					graph.addEdges( vtxIdx, vtxIdx-img.cols, w, w );
-				}
-				if( p.x<img.cols-1 && p.y>0 )
-				{
-					double w = uprightW.at<double>(p);
-					graph.addEdges( vtxIdx, vtxIdx-img.cols+1, w, w );
-				}
-			}
-		}
-	}
 
 	void GrabCutter::constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, double lambda,
 		const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
@@ -607,6 +476,72 @@ namespace visualsearch
 		}
 	}
 
+	void GrabCutter::constructRGBDGCGraph( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, double lambda,
+		const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
+		GCGraph<double>& graph )
+	{
+		int vtxCount = img.cols*img.rows,
+			edgeCount = 2*(4*img.cols*img.rows - 3*(img.cols + img.rows) + 2);
+		graph.create(vtxCount, edgeCount);
+		cv::Point p;
+		for( p.y = 0; p.y < img.rows; p.y++ )
+		{
+			for( p.x = 0; p.x < img.cols; p.x++)
+			{
+				// add node
+				int vtxIdx = graph.addVtx();
+				float dval = dmap.at<float>(p);
+				cv::Vec3d color = (cv::Vec3d)img.at<cv::Vec3b>(p);
+				cv::Mat samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
+
+				// set t-weights
+				// source: bg; sink: fg
+				double fromSource, toSink;
+				if( mask.at<uchar>(p) == cv::GC_PR_BGD || mask.at<uchar>(p) == cv::GC_PR_FGD )
+				{
+					fromSource = -log( bgdGMM(samp) );
+					toSink = -log( fgdGMM(samp) );
+				}
+				else if( mask.at<uchar>(p) == cv::GC_BGD )
+				{
+					fromSource = 0;
+					toSink = lambda;
+				}
+				else // GC_FGD
+				{
+					fromSource = lambda;
+					toSink = 0;
+				}
+				graph.addTermWeights( vtxIdx, fromSource, toSink );
+
+				// set n-weights
+				if( p.x>0 )
+				{
+					double w = leftW.at<double>(p);
+					graph.addEdges( vtxIdx, vtxIdx-1, w, w );
+				}
+				if( p.x>0 && p.y>0 )
+				{
+					double w = upleftW.at<double>(p);
+					graph.addEdges( vtxIdx, vtxIdx-img.cols-1, w, w );
+				}
+				if( p.y>0 )
+				{
+					double w = upW.at<double>(p);
+					graph.addEdges( vtxIdx, vtxIdx-img.cols, w, w );
+				}
+				if( p.x<img.cols-1 && p.y>0 )
+				{
+					double w = uprightW.at<double>(p);
+					graph.addEdges( vtxIdx, vtxIdx-img.cols+1, w, w );
+				}
+			}
+		}
+	} 
+
+
+	//////////////////////////////////////////////////////////////////////////
+
 	void GrabCutter::estimateSegmentation( GCGraph<double>& graph, cv::Mat& mask )
 	{
 		graph.maxFlow();
@@ -662,9 +597,45 @@ namespace visualsearch
 		return true;
 	}
 
+	bool GrabCutter::predictMask(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, const cv::Rect& box, bool show)
+	{
+		mask.create(color_img.rows, color_img.cols, CV_8U);
+		mask.setTo(cv::GC_BGD);
+
+		cv::Vec3b redcolor(0,0,255);
+		cv::Vec3b bluecolor(255,0,0);
+		cv::Mat disp_mask(color_img.rows, color_img.cols, CV_8UC3);
+		disp_mask.setTo(cv::Vec3b(0,255,0));
+
+		// predict for pixels inside rect
+		for(int r=box.y; r<box.br().y; r++)
+		{
+			for(int c=box.x; c<box.br().x; c++)
+			{
+				if( dmask.at<uchar>(r,c) > 0 )
+				{
+					cv::Vec3d cur_color = (cv::Vec3d)color_img.at<cv::Vec3b>(r,c);
+					double bg_prob = bgdGGMM( ConvertVec2Mat(cur_color.val[0], cur_color.val[1], cur_color.val[2], dmap.at<float>(r,c)) );
+					double fg_prob = fgdGGMM( ConvertVec2Mat(cur_color.val[0], cur_color.val[1], cur_color.val[2], dmap.at<float>(r,c)) );
+					mask.at<uchar>(r,c) = (bg_prob > fg_prob? cv::GC_PR_BGD: cv::GC_PR_FGD);
+					disp_mask.at<cv::Vec3b>(r,c) = (bg_prob > fg_prob? bluecolor: redcolor);
+				}
+			}
+		}
+
+		if( show )
+		{
+			// visualize
+			cv::imshow("pred_mask", disp_mask);
+			cv::waitKey(10);
+		}
+
+		return true;
+	}
+
 	//////////////////////////////////////////////////////////////////////////
 	
-	bool GrabCutter::RunGrabCut( const cv::Mat& img, cv::Mat& mask, const cv::Rect& rect,
+	bool GrabCutter::RunGrabCut( const cv::Mat& img, cv::Mat& fg_mask, const cv::Rect& rect,
 		cv::Mat& bgdModel, cv::Mat& fgdModel,
 		int iterCount, int mode )
 	{
@@ -688,18 +659,18 @@ namespace visualsearch
 		if( mode == cv::GC_INIT_WITH_RECT || mode == cv::GC_INIT_WITH_MASK )
 		{
 			if( mode == cv::GC_INIT_WITH_RECT )
-				initMaskWithRect( mask, img.size(), rect );
+				initMaskWithRect( fg_mask, img.size(), rect );
 			else // flag == GC_INIT_WITH_MASK
-				checkMask( img, mask );
+				checkMask( img, fg_mask );
 
-			initGMMs( img, mask, bgdGGMM, fgdGGMM );
+			initGMMs( img, fg_mask, bgdGGMM, fgdGGMM );
 		}
 
 		if( iterCount <= 0)
 			return false;
 
 		if( mode == cv::GC_EVAL )
-			checkMask( img, mask );
+			checkMask( img, fg_mask );
 
 		const double gamma = 50;
 		const double lambda = 9*gamma;
@@ -712,22 +683,22 @@ namespace visualsearch
 		{
 			GCGraph<double> graph;
 			// assign each pixel to one of the component based on new mask
-			assignGMMsComponents( img, mask, bgdGGMM, fgdGGMM, compIdxs );
+			assignGMMsComponents( img, fg_mask, bgdGGMM, fgdGGMM, compIdxs );
 			//assignGMMsComponents( img, mask, bgdGMM, fgdGMM, compIdxs );
 			// re-estimate GMM model using the new mask
 			//learnGMMs( img, mask, compIdxs, bgdGMM, fgdGMM );
-			learnGMMs( img, mask, compIdxs, bgdGGMM, fgdGGMM );
+			learnGMMs( img, fg_mask, compIdxs, bgdGGMM, fgdGGMM );
 			// do graph-cut
 			//constructGCGraph(img, mask, bgdGMM, fgdGMM, lambda, leftW, upleftW, upW, uprightW, graph );
-			constructGCGraph(img, mask, bgdGGMM, fgdGGMM, lambda, leftW, upleftW, upW, uprightW, graph );
+			constructGCGraph(img, fg_mask, bgdGGMM, fgdGGMM, lambda, leftW, upleftW, upW, uprightW, graph );
 			// do segment prediction
-			estimateSegmentation( graph, mask );
+			estimateSegmentation( graph, fg_mask );
 		}
 
 		return true;
 	}
 
-	bool GrabCutter::RunGrabCut( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, 
+	bool GrabCutter::RunRGBDGrabCut( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask, 
 		const cv::Rect& rect, cv::Mat& bgdModel, cv::Mat& fgdModel, 
 		int iterCount, int mode )
 	{
@@ -748,47 +719,45 @@ namespace visualsearch
 		}
 		
 
-		bgdGMM = learners::ColorGMM( bgdModel );
-		fgdGMM = learners::ColorGMM( fgdModel );
+		bgdGGMM = learners::GeneralGMM( 4 );
+		fgdGGMM = learners::GeneralGMM( 4 );
 		cv::Mat compIdxs( img.size(), CV_32SC1 );
 
 		if( mode == cv::GC_INIT_WITH_RECT || mode == cv::GC_INIT_WITH_MASK )
 		{
 			if( mode == cv::GC_INIT_WITH_RECT )
-				initMaskWithRect( mask, img.size(), rect );
+				initMaskWithRect( fg_mask, img.size(), rect );
 			else // flag == GC_INIT_WITH_MASK
-				checkMask( img, mask );
+				checkMask( img, fg_mask );
 
-			initGMMs( img, mask, bgdGMM, fgdGMM );
+			initRGBDGMMs( img, dmap, dmask, fg_mask, bgdGGMM, fgdGGMM );
 		}
 
 		if( iterCount <= 0)
 			return false;
 
 		if( mode == cv::GC_EVAL )
-			checkMask( img, mask );
+			checkMask( img, fg_mask );
 
-		const double gamma = 1;
+		const double gamma = 50;
 		const double lambda = 9*gamma;
-		const double beta = calcBetaRGBD(img, dmap, mask); //calcBeta( img );
+		const double beta =  calcBeta( img );	//calcBetaRGBD(img, dmap, dmask);
 
 		cv::Mat leftW, upleftW, upW, uprightW;
-		calcNWeightsRGBD(img, dmap, mask, leftW, upleftW, upW, uprightW, beta, gamma);
-		//calcNWeights( img, leftW, upleftW, upW, uprightW, beta, gamma );
-		// to add depth here
-
+		//calcNWeightsRGBD(img, dmap, dmask, leftW, upleftW, upW, uprightW, beta, gamma);
+		calcNWeights(img, leftW, upleftW, upW, uprightW, beta, gamma);
 
 		for( int i = 0; i < iterCount; i++ )
 		{
 			GCGraph<double> graph;
 			// assign each pixel to one of the component based on new mask
-			assignGMMsComponents( img, mask, bgdGMM, fgdGMM, compIdxs );
+			assignRGBDGMMsComponents( img, dmap, dmask, fg_mask, bgdGGMM, fgdGGMM, compIdxs );
 			// re-estimate GMM model using the new mask
-			learnGMMs( img, mask, compIdxs, bgdGMM, fgdGMM );
+			learnRGBDGMMs( img, dmap, dmask, fg_mask, compIdxs, bgdGGMM, fgdGGMM );
 			// do graph-cut
-			constructGCGraph(img, mask, bgdGMM, fgdGMM, lambda, leftW, upleftW, upW, uprightW, graph );
+			constructRGBDGCGraph( img, dmap, dmask, fg_mask, bgdGGMM, fgdGGMM, lambda, leftW, upleftW, upW, uprightW, graph );
 			// do segment prediction
-			estimateSegmentation( graph, mask );
+			estimateSegmentation( graph, fg_mask );
 		}
 
 		return true;

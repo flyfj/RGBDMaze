@@ -37,16 +37,8 @@ namespace visualsearch
 	{
 	private:
 
-		// rgb gmm
-		learners::ColorGMM bgdGMM;
-		learners::ColorGMM fgdGMM;
-
 		learners::GeneralGMM bgdGGMM;
 		learners::GeneralGMM fgdGGMM;
-
-		// depth gmm
-		learners::ColorGMM bgdDepthGMM;
-		learners::ColorGMM fgdDepthGMM;
 
 		cv::Mat ConvertVec2Mat(const cv::Vec3d color)
 		{
@@ -54,6 +46,17 @@ namespace visualsearch
 			val_mat.at<double>(0,0) = color.val[0];
 			val_mat.at<double>(0,1) = color.val[1];
 			val_mat.at<double>(0,2) = color.val[2];
+
+			return val_mat;
+		}
+
+		cv::Mat ConvertVec2Mat(double x1, double x2, double x3, double x4)
+		{
+			cv::Mat val_mat(1, 4, CV_64F);
+			val_mat.at<double>(0,0) = x1;
+			val_mat.at<double>(0,1) = x2;
+			val_mat.at<double>(0,2) = x3;
+			val_mat.at<double>(0,3) = x4;
 
 			return val_mat;
 		}
@@ -84,6 +87,7 @@ namespace visualsearch
 		beta and gamma - parameters of GrabCut algorithm.
 		neighbor weights
 		*/
+
 		void calcNWeights( const cv::Mat& img, cv::Mat& leftW, cv::Mat& upleftW, cv::Mat& upW, cv::Mat& uprightW, double beta, double gamma );
 
 		void calcNWeightsRGBD( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, 
@@ -103,38 +107,36 @@ namespace visualsearch
 		/*
 		Initialize GMM background and foreground models using kmeans algorithm.
 		*/
-		void initGMMs( const cv::Mat& img, const cv::Mat& mask, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM );
 
 		void initGMMs( const cv::Mat& img, const cv::Mat& mask, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM );
 
-		void initDepthGMMs( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, learners::ColorGMM& bgdDepthGMM, learners::ColorGMM& fgdDepthGMM );
+		void initRGBDGMMs( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM );
 
 		/*
 		Assign GMMs components for each pixel.
 		*/
-		void assignGMMsComponents( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, cv::Mat& compIdxs );
 
 		void assignGMMsComponents( const cv::Mat& img, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, cv::Mat& compIdxs );
 
-		void assignDepthGMMsComponents( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::ColorGMM& bgdDepthGMM, const learners::ColorGMM& fgdDepthGMM, cv::Mat& compIdxs );
+		void assignRGBDGMMsComponents( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, cv::Mat& compIdxs );
 
 		/*
 		Learn GMMs parameters.
 		*/
-		void learnGMMs( const cv::Mat& img, const cv::Mat& mask, const cv::Mat& compIdxs, learners::ColorGMM& bgdGMM, learners::ColorGMM& fgdGMM );
 
 		void learnGMMs( const cv::Mat& img, const cv::Mat& mask, const cv::Mat& compIdxs, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM );
 
-		void learnDepthGMMs( const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const cv::Mat& compIdxs, learners::ColorGMM& bgdDepthGMM, learners::ColorGMM& fgdDepthGMM );
+		void learnRGBDGMMs( const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const cv::Mat& compIdxs, learners::GeneralGMM& bgdGMM, learners::GeneralGMM& fgdGMM );
 
 		/*
 		Construct GCGraph
 		*/
-		void constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::ColorGMM& bgdGMM, const learners::ColorGMM& fgdGMM, double lambda,
+
+		void constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, double lambda,
 			const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
 			GCGraph<double>& graph );
 
-		void constructGCGraph( const cv::Mat& img, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, double lambda,
+		void constructRGBDGCGraph( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, const cv::Mat& mask, const learners::GeneralGMM& bgdGMM, const learners::GeneralGMM& fgdGMM, double lambda,
 			const cv::Mat& leftW, const cv::Mat& upleftW, const cv::Mat& upW, const cv::Mat& uprightW,
 			GCGraph<double>& graph );
 
@@ -143,22 +145,25 @@ namespace visualsearch
 		*/
 		void estimateSegmentation( GCGraph<double>& graph, cv::Mat& mask );
 
+
 		//////////////////////////////////////////////////////////////////////////
 		// augmented methods
 
 		// predict label of fg / bg using existing models; outside box is bg
 		bool predictMask(const cv::Mat& color_img, cv::Mat& mask, const cv::Rect& box, bool show = false);
 
+		bool predictMask(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, const cv::Rect& box, bool show = false);
+
 		//////////////////////////////////////////////////////////////////////////
 
 		// run grabcut
 		// mask is a 0/1 hard map
-		bool RunGrabCut( const cv::Mat& img, cv::Mat& mask, const cv::Rect& rect,
+		bool RunGrabCut( const cv::Mat& img, cv::Mat& fg_mask, const cv::Rect& rect,
 			cv::Mat& bgdModel, cv::Mat& fgdModel,
 			int iterCount, int mode );
 
 		// rgbd version
-		bool RunGrabCut( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, const cv::Rect& rect,
+		bool RunRGBDGrabCut( const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask, const cv::Rect& rect,
 			cv::Mat& bgdModel, cv::Mat& fgdModel,
 			int iterCount, int mode );
 

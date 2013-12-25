@@ -13,6 +13,7 @@ namespace visualsearch
 {
 	namespace learners
 	{
+		// original opencv gmm
 		class ColorGMM
 		{
 		public:
@@ -48,16 +49,31 @@ namespace visualsearch
 
 		//////////////////////////////////////////////////////////////////////////
 
+		struct GMMParams 
+		{
+			int componentsCount;
+			int featureDim;
+			bool cov_diag;
+
+			GMMParams()
+			{
+				componentsCount = 5;
+				featureDim = 3;
+				cov_diag = false;
+			}
+		};
+
 		// if something is not right, check the data order from matrix conversion to array
 		class GeneralGMM
 		{
 		public:
+
 			static const int componentsCount = 5;
 			static int featureDim;
 			static const int MaxFeatureDim = 10;
 
-			GeneralGMM() {}
-			GeneralGMM( cv::Mat& _model, int _featureDim );
+			GeneralGMM() { GeneralGMM(3); } 
+			GeneralGMM( int _featureDim );
 			// probability of color in the whole model (weighted sum)
 			double operator()( const cv::Mat& samp ) const;
 			// probability of color in ci component
@@ -69,25 +85,17 @@ namespace visualsearch
 			void endLearning();
 
 		private:
+
 			void calcInverseCovAndDeterm( int ci );
 			cv::Mat model;
 			
-			// replace one row matrix model with separate matrices for each parameter type
-			vector<cv::Mat> means;
-			vector<cv::Mat> covs;
-			vector<double> covDets;
-			vector<cv::Mat> inv_covs;
-			vector<double> weights;
+			// model data
+			vector<cv::Mat> means;	// mean feature
+			vector<cv::Mat> covs;	// covariance matrix
+			vector<double> covDets;	// determinant of cov
+			vector<cv::Mat> inv_covs;	// pre-computed inv_conv
+			vector<double> weights;	// component weights
 
-			double* coefs;
-			double* mean;
-			double* cov;
-
-			double inverseCovs[componentsCount][MaxFeatureDim][MaxFeatureDim];	// maximum number of feature dimension
-			double covDeterms[componentsCount];
-
-			double sums[componentsCount][MaxFeatureDim];	// intermediate sum of samples
-			double prods[componentsCount][MaxFeatureDim][MaxFeatureDim];	// intermediate sum of products
 			int sampleCounts[componentsCount];
 			int totalSampleCount;
 		};

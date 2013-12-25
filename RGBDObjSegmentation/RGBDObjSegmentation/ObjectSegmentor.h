@@ -26,6 +26,8 @@ namespace visualsearch
 	// grabcut
 	enum{ GRAB_NOT_SET = 0, GRAB_IN_PROCESS = 1, GRAB_SET = 2 };
 
+
+	// a wrapper class for different object segment algorithms
 	class ObjectSegmentor
 	{
 	public:
@@ -61,15 +63,21 @@ namespace visualsearch
 			return segmentor.predictMask(color_img, mask, box, show);
 		}
 
+		bool PredictRGBDSegmentMask(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, const cv::Rect& box, bool show = false)
+		{
+			return segmentor.predictMask(color_img, dmap, dmask, mask, box, show);
+		}
+
 		// model is used for continuous cut
 		bool RunGrabCut(const cv::Mat& color_img, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
 
-		bool RunGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
+		// general interface
+		bool RunRGBDGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont = false);
 
 		// interactive cut
 		bool InteractiveCut(const cv::Mat& img, cv::Mat& fg_mask);
 
-		bool InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, cv::Mat& fg_mask);
+		bool InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask);
 	};
 }
 

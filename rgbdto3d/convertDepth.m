@@ -1,9 +1,9 @@
 %% convert mat depth map to text data file
 
-data_dir = 'F:\test\processed_fire\processed_fire\';
+data_dir = 'F:\test\processed_mug2\';
 
-start_id = 10;
-end_id = 215;
+start_id = 196;
+end_id = 196;
 
 imgw = 640;
 imgh = 480;

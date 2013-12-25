@@ -135,7 +135,7 @@ namespace rgbdvision
 		cv::normalize(dmap_disp, dmap_disp, 1, 0, cv::NORM_MINMAX);
 		dmap.convertTo(dmap_disp, CV_8U, 255);
 
-		cv::cvtColor(dmap_disp, dmap_disp, CV_GRAY2BGR);
+		//cv::cvtColor(dmap_disp, dmap_disp, CV_GRAY2BGR);
 
 		return true;
 	}
@@ -149,6 +149,9 @@ namespace rgbdvision
 
 		dmaps.clear();
 		dmaps.resize(end_id-start_id+1);
+
+		dmasks.clear();
+		dmasks.resize(end_id-start_id+1);
 
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
@@ -179,8 +182,11 @@ namespace rgbdvision
 				if( !LoadDepthmap(dmapfile, dmaps[i-start_id]) )
 					return false;
 
+				cv::compare(dmaps[i-start_id], 0, dmasks[i-start_id], cv::CMP_GT);
+
 				cv::Size old_sz(dmaps[i-start_id].cols, dmaps[i-start_id].rows);
 				cv::resize(dmaps[i-start_id], dmaps[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
+				cv::resize(dmasks[i-start_id], dmasks[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
 
 				cv::Mat dmap_disp;
 				ConvertDmapForDisplay(dmaps[i-start_id], dmap_disp);
@@ -218,7 +224,7 @@ namespace rgbdvision
 
 		// user helps cut first frame
 		if(seg_input == SEG_RGBD)
-			obj_segmentor.InteractiveCut(frames[0], dmaps[0], fgMasks[0]);
+			obj_segmentor.InteractiveCut(frames[0], dmaps[0], dmasks[0], fgMasks[0]);
 		if(seg_input == SEG_RGB)
 			obj_segmentor.InteractiveCut(frames[0], fgMasks[0]);
 
@@ -248,20 +254,23 @@ namespace rgbdvision
 			cv::rectangle(disp_img, box, CV_RGB(0, 255, 0));
 			cv::imshow("cur_frame", disp_img);
 
-			obj_segmentor.PredictSegmentMask(frames[i], fgMasks[i], box, true);
+			if(seg_input == SEG_RGBD)
+				obj_segmentor.PredictRGBDSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
+			if(seg_input == SEG_RGB)
+				obj_segmentor.PredictSegmentMask(frames[i], fgMasks[i], box, true);
 
 			cv::waitKey(10);
 
 			if(seg_input == SEG_RGB)
 				obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
 			if(seg_input == SEG_RGBD)
-				obj_segmentor.RunGrabCut(frames[i], dmaps[i], fgMasks[i], box, true);
+				obj_segmentor.RunRGBDGrabCut(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, false);
 
 			// update box for bg initialization on next frame
 			MaskBoundingBox(fgMasks[i], box);
 
 			// save segment image
-			sprintf_s(str, "seg%d_", i+start_id);
+			sprintf_s(str, "seg_%d", i+start_id);
 			string savefile = frame_dir + string(str) + ".jpg";
 			cv::Mat trimap = frames[i].clone();
 			trimap.setTo(cv::Vec3b(0, 0, 255), fgMasks[i]);

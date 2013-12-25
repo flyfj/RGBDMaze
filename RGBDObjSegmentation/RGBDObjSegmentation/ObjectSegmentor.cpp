@@ -121,7 +121,7 @@ namespace visualsearch
 		return true;
 	}
 
-	bool ObjectSegmentor::RunGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont)
+	bool ObjectSegmentor::RunRGBDGrabCut(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask, const cv::Rect& box, bool ifcont)
 	{
 		// run grabcut
 		cout<<"Running grabcut..."<<endl;
@@ -130,18 +130,18 @@ namespace visualsearch
 		if ( !ifcont )
 		{
 			// new iteration
-			segmentor.RunGrabCut(color_img, dmap, fg_mask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
+			segmentor.RunRGBDGrabCut(color_img, dmap, dmask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_RECT);
 		}
 		else
 		{
 			// continuous
-			segmentor.RunGrabCut(color_img, dmap, fg_mask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
+			segmentor.RunRGBDGrabCut(color_img, dmap, dmask, cut_mask, box, grabcutModel.bgModel, grabcutModel.fgModel, 2, cv::GC_INIT_WITH_MASK);
 		}
 		
 		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;
 
 		// visualize mask
-		fg_mask = fg_mask & 1;
+		fg_mask = cut_mask & 1;
 		cv::Mat trimap = color_img.clone();
 		// convert to rgba for transparent drawing
 		//cv::cvtColor(trimap, trimap, CV_BGR2BGRA);
@@ -195,7 +195,7 @@ namespace visualsearch
 		return true;
 	}
 
-	bool ObjectSegmentor::InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, cv::Mat& fg_mask)
+	bool ObjectSegmentor::InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask)
 	{
 		// reset
 		ResetGrabcut();
@@ -222,7 +222,7 @@ namespace visualsearch
 				if(ObjectSegmentor::grabState == GRAB_SET)
 				{
 					// do grabcut
-					RunGrabCut(toProcessImg, dmap, fg_mask, grabBox);
+					RunRGBDGrabCut(toProcessImg, dmap, dmask, fg_mask, grabBox);
 					ifCut = true;
 				}
 			}

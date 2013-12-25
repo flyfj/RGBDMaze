@@ -25,6 +25,7 @@ namespace rgbdvision
 
 		std::vector<cv::Mat> frames;
 		std::vector<cv::Mat> dmaps;
+		std::vector<cv::Mat> dmasks;
 		std::vector<cv::Mat> fgMasks;
 		visualsearch::ObjectSegmentor obj_segmentor;
 
@@ -46,6 +47,7 @@ namespace rgbdvision
 		bool LoadVideoFrames(const string& frame_dir, int start_id, int end_id, SegmentInput seg_input);
 
 		bool DoSegmentation(const string& frame_dir, int start_id, int end_id, SegmentInput seg_input);
+
 	};
 }
 

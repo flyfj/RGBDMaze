@@ -42,7 +42,7 @@ namespace visualsearch
 			double res = 0;
 			if( coefs[ci] > 0 )
 			{
-				CV_Assert( covDeterms[ci] > std::numeric_limits<double>::epsilon() );
+				//CV_Assert( covDeterms[ci] > std::numeric_limits<double>::epsilon() );
 				cv::Vec3d diff = color;
 				double* m = mean + 3*ci;
 				diff[0] -= m[0]; diff[1] -= m[1]; diff[2] -= m[2];	// centralize
@@ -149,30 +149,15 @@ namespace visualsearch
 			}
 		}
 
+
 		//////////////////////////////////////////////////////////////////////////
 
 		int GeneralGMM::featureDim = 3;
 
-		GeneralGMM::GeneralGMM( cv::Mat& _model, int _featureDim )
+		GeneralGMM::GeneralGMM( int _featureDim )
 		{
 			featureDim = _featureDim;
 			// compress all component parameter into a one-row matrix
-			const int modelSize = featureDim/*mean*/ + featureDim*featureDim/*covariance*/ + 1/*component weight*/;
-			if( _model.empty() )
-			{
-				_model.create( 1, modelSize*componentsCount, CV_64FC1 );
-				_model.setTo(cv::Scalar(0));
-			}
-			else if( (_model.type() != CV_64FC1) || (_model.rows != 1) || (_model.cols != modelSize*componentsCount) )
-				CV_Error( CV_StsBadArg, "_model must have CV_64FC1 type, rows == 1 and cols == 13*componentsCount" );
-
-			model = _model;
-
-			// format: component_weights + means + covs
-			// each points to the beginning of the data
-			coefs = model.ptr<double>(0);
-			mean = coefs + componentsCount;
-			cov = mean + featureDim*componentsCount;
 
 			// init
 			means.resize(componentsCount);
@@ -192,29 +177,25 @@ namespace visualsearch
 				covDets[ci] = 0;
 			}
 
-			/*for( int ci = 0; ci < componentsCount; ci++ )
-			if( coefs[ci] > 0 )
-			calcInverseCovAndDeterm( ci );*/
 		}
 
 		double GeneralGMM::operator()( const cv::Mat& samp ) const
 		{
 			double res = 0;
 			for( int ci = 0; ci < componentsCount; ci++ )
-				res += coefs[ci] * (*this)(ci, samp );
+				res += weights[ci] * (*this)(ci, samp );
 			return res;
 		}
 
 		double GeneralGMM::operator()( int ci, const cv::Mat& samp ) const
 		{
 			double res = 0;
-			if( coefs[ci] > 0 )
+			if( weights[ci] > 0 )
 			{
-				CV_Assert( covDets[ci] > std::numeric_limits<double>::epsilon() );
+				//CV_Assert( covDets[ci] > std::numeric_limits<double>::epsilon() );
 
 				cv::Mat diff = samp - means[ci];
-				cv::Mat val = - diff * inv_covs[ci] * diff.t();
-				val /= 2;
+				cv::Mat val = - diff * inv_covs[ci] * diff.t() * 0.5f;
 				CV_Assert( val.rows == 1 && val.cols == 1 );
 			
 				res = 1.0f / sqrt(covDets[ci]) * exp(val.at<double>(0,0));
@@ -247,12 +228,6 @@ namespace visualsearch
 				covs[ci].setTo(0);
 
 				// reset each component
-				/*for(int i=0; i<featureDim; i++)
-				{
-				sums[ci][i] = 0;
-				for(int j=0; j<featureDim; j++)
-				prods[ci][i][j] = 0;
-				}*/
 				sampleCounts[ci] = 0;
 			}
 			totalSampleCount = 0;
@@ -263,14 +238,6 @@ namespace visualsearch
 			means[ci] += samp;
 			covs[ci] += samp.t() * samp;
 
-			/*for(int i=0; i<featureDim; i++)
-			{
-			sums[ci][i] += samp.at<double>(i);
-			for(int j=0; j<featureDim; j++)
-			{
-			prods[ci][i][j] += samp.at<double>(i) * samp.at<double>(j);
-			}
-			}*/
 			sampleCounts[ci]++;
 			totalSampleCount++;
 		}
@@ -282,15 +249,11 @@ namespace visualsearch
 			{
 				int n = sampleCounts[ci];
 				if( n == 0 )
-					coefs[ci] = 0;
+					weights[ci] = 0;
 				else
 				{
-					coefs[ci] = (double)n/totalSampleCount;
+					weights[ci] = (double)n/totalSampleCount;
 
-					//double* m = mean + featureDim*ci;
-					// compute mean
-					/*for(int i=0; i<featureDim; i++)
-					m[i] = sums[ci][i] / n;*/
 					means[ci] /= n;
 
 					// covariance (assume diagonal) cov = 1/n sum(X^T X) - mu^T mu
@@ -313,7 +276,7 @@ namespace visualsearch
 
 		void GeneralGMM::calcInverseCovAndDeterm( int ci )
 		{
-			if( coefs[ci] > 0 )
+			if( weights[ci] > 0 )
 			{
 				cv::invert(covs[ci], inv_covs[ci]);
 				//cout<<inv_covs[ci]<<endl;
