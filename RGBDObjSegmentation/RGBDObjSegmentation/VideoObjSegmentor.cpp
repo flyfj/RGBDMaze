@@ -223,10 +223,7 @@ namespace rgbdvision
 		fgMasks.resize(frames.size());
 
 		// user helps cut first frame
-		if(seg_input == SEG_RGBD)
-			obj_segmentor.InteractiveCut(frames[0], dmaps[0], dmasks[0], fgMasks[0]);
-		if(seg_input == SEG_RGB)
-			obj_segmentor.InteractiveCut(frames[0], fgMasks[0]);
+		obj_segmentor.InteractiveCut(frames[0], dmaps[0], dmasks[0], fgMasks[0]);
 
 		// propagate to other frames
 		cv::Rect box;
@@ -254,17 +251,11 @@ namespace rgbdvision
 			cv::rectangle(disp_img, box, CV_RGB(0, 255, 0));
 			cv::imshow("cur_frame", disp_img);
 
-			if(seg_input == SEG_RGBD)
-				obj_segmentor.PredictRGBDSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
-			if(seg_input == SEG_RGB)
-				obj_segmentor.PredictSegmentMask(frames[i], fgMasks[i], box, true);
+			obj_segmentor.PredictSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
 
-			cv::waitKey(10);
+			cv::waitKey(0);
 
-			if(seg_input == SEG_RGB)
-				obj_segmentor.RunGrabCut(frames[i], fgMasks[i], box, true);
-			if(seg_input == SEG_RGBD)
-				obj_segmentor.RunRGBDGrabCut(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, false);
+			obj_segmentor.RunRGBDGrabCut(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, false);
 
 			// update box for bg initialization on next frame
 			MaskBoundingBox(fgMasks[i], box);
