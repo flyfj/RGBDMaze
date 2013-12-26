@@ -5,7 +5,7 @@
 data_dir = 'F:\test\NewlyAlignedRGB_mug\NewlyAlignedRGB_mug\';
 
 start_id = 100;
-end_id = 120;
+end_id = 100;
 
 imgw = 640;
 imgh = 480;

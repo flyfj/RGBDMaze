@@ -46,6 +46,9 @@ namespace visualsearch
 		learners::GeneralGMM bgdGGMM;
 		learners::GeneralGMM fgdGGMM;
 
+		cv::Rect contextBox;
+		cv::Rect fgBox;
+
 		cv::Mat ConvertVec2Mat(double x1, double x2, double x3)
 		{
 			cv::Mat val_mat(1, 3, CV_64F);

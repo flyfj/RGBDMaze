@@ -5,6 +5,7 @@ namespace rgbdvision
 {
 	VideoObjSegmentor::VideoObjSegmentor(void)
 	{
+		invF = (cv::Mat_<float>(3,3) << 594.21, 0, 0.5385, 0, 591.04, 0.4039, 0, 0, 1);
 	}
 
 	bool VideoObjSegmentor::ExpandBox(const cv::Rect oldBox, cv::Rect& newBox, float ratio, int imgWidth, int imgHeight)
@@ -109,20 +110,47 @@ namespace rgbdvision
 		return true;
 	}
 
-	bool VideoObjSegmentor::LoadDepthmap(const string& filename, cv::Mat& dmap)
+	bool VideoObjSegmentor::LoadBinaryDepthmap(const string& filename, cv::Mat& dmap, int w, int h)
 	{
-		int imgw = 640;
-		int imgh = 480;
+		dmap.create(h, w, CV_32F);
+
+		ifstream in(filename, ios::binary);
+		if( !in.is_open() )
+			return false;
+
+		// get file size
+		in.seekg (0, in.end);
+		int length = in.tellg();
+		in.seekg (0, in.beg);
+
+		// verify
+		assert( length == w*h*sizeof(float) );
+
+		// read data
+		vector<float> data(length / sizeof(float) + 1);
+		in.read((char*)(&data[0]), length);
+
+		for(int r=0; r<h; r++)
+		{
+			for(int c=0; c<w; c++)
+				dmap.at<float>(r,c) = data[r*w+c];
+		}
+
+		return true;
+	}
+
+	bool VideoObjSegmentor::LoadMat(const string& filename, cv::Mat& rmat, int w, int h)
+	{
 		ifstream in(filename);
 		if( !in.is_open() )
 			return false;
-		
-		dmap.create(imgh, imgw, CV_32F);
-		for(int r=0; r<imgh; r++)
+
+		rmat.create(h, w, CV_32F);
+		for(int r=0; r<h; r++)
 		{
-			for(int c=0; c<imgw; c++)
+			for(int c=0; c<w; c++)
 			{
-				in>>dmap.at<float>(r,c);
+				in>>rmat.at<float>(r,c);
 			}
 		}
 
@@ -140,6 +168,34 @@ namespace rgbdvision
 		return true;
 	}
 
+	bool VideoObjSegmentor::Proj2Dto3D(const cv::Mat& fg_mask, const cv::Mat& dmap, const cv::Mat& w2c_mat, std::vector<cv::Vec3f>& pts3d)
+	{
+		// homogeneous coordinates: (x, y, d)
+		cv::Mat homo_coords(0, 0, CV_32F);
+		cv::Mat dvalmap(0, 0, CV_32F);
+		for(int r=0; r<fg_mask.rows; r++)
+		{
+			for(int c=0; c<fg_mask.cols; c++)
+			{
+				if(fg_mask.at<uchar>(r,c) > 0)
+				{
+					float dval = dmap.at<float>(r,c);
+					cv::Vec3f cur_pt(c, r, dval);
+					homo_coords.push_back( cv::Mat(cur_pt).t() );
+					cv::Vec3f cur_dval(dval, dval, dval);
+					dvalmap.push_back( cv::Mat(cur_dval).t() );
+				}
+			}
+		}
+
+		// convert to local coordinates (x, y, z)
+		homo_coords = homo_coords / dvalmap;
+
+
+
+		return true;
+	}
+
 	//////////////////////////////////////////////////////////////////////////
 
 	bool VideoObjSegmentor::LoadVideoFrames(const string& frame_dir, int start_id, int end_id, SegmentInput seg_input)
@@ -152,6 +208,9 @@ namespace rgbdvision
 
 		dmasks.clear();
 		dmasks.resize(end_id-start_id+1);
+
+		w2c.clear();
+		w2c.resize(end_id-start_id+1);
 
 		char str[50];
 		for(int i=start_id; i<=end_id; i++)
@@ -174,13 +233,16 @@ namespace rgbdvision
 				cv::waitKey(10);
 			}
 			
-			if(seg_input == SEG_RGBD || seg_input == SEG_DEPTH)
+			if(seg_input == SEG_RGBD)
 			{
 				// load depth map
-				sprintf_s(str, "%d_depth.txt", i);
+				sprintf_s(str, "%d_depth.bin", i);
 				string dmapfile = frame_dir + string(str);
-				if( !LoadDepthmap(dmapfile, dmaps[i-start_id]) )
+				if( !LoadBinaryDepthmap(dmapfile, dmaps[i-start_id], 640, 480) )
+				{
+					std::cerr<<"Fail to load depth map."<<std::endl;
 					return false;
+				}
 
 				cv::compare(dmaps[i-start_id], 0, dmasks[i-start_id], cv::CMP_GT);
 
@@ -192,6 +254,15 @@ namespace rgbdvision
 				ConvertDmapForDisplay(dmaps[i-start_id], dmap_disp);
 				cv::imshow("depth frame", dmap_disp);
 				cv::waitKey(10);
+
+				// load w2c matrix
+				sprintf_s(str, "%d_w2c.txt", i);
+				string cmatfile = frame_dir + string(str);
+				if( !LoadMat(cmatfile, w2c[i-start_id], 4, 4) )
+				{
+					std::cerr<<"Fail to load w2c matrix."<<std::endl;
+					return false;
+				}
 			}
 
 			cout<<"Loaded "<<i<<endl;
@@ -219,11 +290,26 @@ namespace rgbdvision
 		if( !LoadVideoFrames(frame_dir, start_id, end_id, seg_input) )
 			return false;
 
+		if(seg_input == SEG_RGB)
+		{
+			obj_segmentor.grabcutter.DATA_CONFIG = visualsearch::GC_DATA_RGB;
+			obj_segmentor.grabcutter.SMOOTH_CONFIG = visualsearch::GC_SMOOTH_RGB;
+		}
+		if(seg_input == SEG_RGBD)
+		{
+			obj_segmentor.grabcutter.DATA_CONFIG = visualsearch::GC_DATA_RGB;
+			obj_segmentor.grabcutter.SMOOTH_CONFIG = visualsearch::GC_SMOOTH_DEPTH;
+		}
+
 		fgMasks.clear();
 		fgMasks.resize(frames.size());
 
 		// user helps cut first frame
 		obj_segmentor.InteractiveCut(frames[0], dmaps[0], dmasks[0], fgMasks[0]);
+
+		// test projection
+		//vector<cv::Vec3f> pts;
+		//Proj2Dto3D(fgMasks[0], dmaps[0], w2c[0], pts);
 
 		// propagate to other frames
 		cv::Rect box;
@@ -252,8 +338,7 @@ namespace rgbdvision
 			cv::imshow("cur_frame", disp_img);
 
 			obj_segmentor.PredictSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
-
-			cv::waitKey(0);
+			cv::waitKey(10);
 
 			obj_segmentor.RunRGBDGrabCut(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, false);
 

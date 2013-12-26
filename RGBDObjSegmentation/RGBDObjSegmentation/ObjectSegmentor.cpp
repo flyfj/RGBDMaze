@@ -5,6 +5,7 @@ namespace visualsearch
 	// init static
 	cv::Scalar ObjectSegmentor::BOXDRAWCOLOR = CV_RGB(0, 255, 0);
 	cv::Mat ObjectSegmentor::toProcessImg = cv::Mat();
+	cv::Mat ObjectSegmentor::toProcessDmap = cv::Mat();
 	uchar ObjectSegmentor::grabState = GRAB_NOT_SET;
 	cv::Rect ObjectSegmentor::grabBox = cv::Rect();
 	cv::Point ObjectSegmentor::grabStartPt = cv::Point(0,0);
@@ -14,7 +15,7 @@ namespace visualsearch
 		seg_type = OBJSEG_GRABCUT;
 
 		grabcutter.DATA_CONFIG = GC_DATA_RGB;
-		grabcutter.SMOOTH_CONFIG = GC_SMOOTH_RGB;
+		grabcutter.SMOOTH_CONFIG = GC_SMOOTH_DEPTH;
 	}
 
 	//////////////////////////////////////////////////////////////////////////
@@ -32,6 +33,8 @@ namespace visualsearch
 				cv::rectangle(disp_img, grabBox, BOXDRAWCOLOR, 2);
 			}
 			cv::imshow("Grab", disp_img);
+			if(!toProcessDmap.empty())
+				cv::imshow("dmap", toProcessDmap);
 			cv::waitKey(10);
 		}
 	}
@@ -94,7 +97,7 @@ namespace visualsearch
 		double start_t = cv::getTickCount();
 		cv::Mat cut_mask;
 
-		grabcutter.RunRGBDGrabCut(color_img, dmap, dmask, cut_mask, box, 1, visualsearch::GC_MODE_NEW);
+		grabcutter.RunRGBDGrabCut(color_img, dmap, dmask, cut_mask, box, 2, visualsearch::GC_MODE_NEW);
 		
 		cout<<"Grabcut time: "<<(double)(cv::getTickCount() - start_t) / cv::getTickFrequency()<<"s"<<endl;
 
@@ -104,6 +107,9 @@ namespace visualsearch
 		// convert to rgba for transparent drawing
 		//cv::cvtColor(trimap, trimap, CV_BGR2BGRA);
 		trimap.setTo(cv::Vec3b(0, 0, 255), fg_mask);
+
+		cv::resize(trimap, trimap, cv::Size(trimap.cols*2, trimap.rows*2));
+		cv::imwrite("g:\\seg_73.jpg", trimap);
 
 		cv::imshow("Segment", trimap);
 		cv::waitKey(10);
@@ -119,6 +125,7 @@ namespace visualsearch
 		ResetGrabcut();
 
 		img.copyTo(toProcessImg);
+		dmap.copyTo(toProcessDmap);
 
 		// set up mouse callback
 		ShowGrabbedImage();	// must show window first

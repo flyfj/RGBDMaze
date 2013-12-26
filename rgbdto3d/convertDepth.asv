@@ -2,10 +2,10 @@
 % depth map export to binary file
 % plus camera pose matrix to text file
 
-data_dir = 'F:\test\fire_processed_new\';
+data_dir = 'F:\test\processed_mug2\';
 
-start_id = 10;
-end_id = 125;
+start_id = 196;
+end_id = 196;
 
 imgw = 640;
 imgh = 480;
@@ -21,10 +21,9 @@ for i=start_id:end_id
     
     % output to text file
     save_dfile = [data_dir num2str(i) '_depth.bin'];
-    fid = fopen(save_dfile, 'w');
-    fwrite(fid, cur_dmap', 'single');
-    fclose(fid);
-    %save(save_dfile, 'cur_dmap', '-ascii');
+    fid = fopen(save_dfile);
+    
+    save(save_dfile, 'cur_dmap', '-ascii');
     
     % load w2c
     cur_cfile = [data_dir num2str(i) '_w2c.mat'];

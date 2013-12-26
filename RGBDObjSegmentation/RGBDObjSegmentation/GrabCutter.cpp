@@ -10,9 +10,9 @@ namespace visualsearch
 
 		// compute expectation of color difference between two neighboring pixels
 		double beta = 0;
-		for( int y = 0; y < img.rows; y++ )
+		for( int y = contextBox.y; y < contextBox.br().y; y++ )
 		{
-			for( int x = 0; x < img.cols; x++ )
+			for( int x = contextBox.x; x < contextBox.br().x; x++ )
 			{
 				cv::Vec3d color_val = (cv::Vec3d)img.at<cv::Vec3b>(y,x);
 
@@ -95,12 +95,16 @@ namespace visualsearch
 
 		const double gammaDivSqrt2 = gamma / std::sqrt(2.0f);
 		leftW.create( img.rows, img.cols, CV_64FC1 );
+		leftW.setTo(0);
 		upleftW.create( img.rows, img.cols, CV_64FC1 );
+		upleftW.setTo(0);
 		upW.create( img.rows, img.cols, CV_64FC1 );
+		upW.setTo(0);
 		uprightW.create( img.rows, img.cols, CV_64FC1 );
-		for( int y = 0; y < img.rows; y++ )
+		uprightW.setTo(0);
+		for( int y = contextBox.y; y < contextBox.br().y; y++ )
 		{
-			for( int x = 0; x < img.cols; x++ )
+			for( int x = contextBox.x; x < contextBox.br().x; x++ )
 			{
 				if( useDepth && dmask.at<uchar>(y,x) <= 0 )
 					continue;
@@ -223,23 +227,32 @@ namespace visualsearch
 		cv::Mat bgdSamples(0, 0, CV_64F), fgdSamples(0, 0, CV_64F);
 		cv::Point p;
 		// separate bg and fg samples
-		for( p.y = 0; p.y < color_img.rows; p.y++ )
+		for( p.y = contextBox.y; p.y < contextBox.br().y; p.y++ )
 		{
-			for( p.x = 0; p.x < color_img.cols; p.x++ )
+			for( p.x = contextBox.x; p.x < contextBox.br().x; p.x++ )
 			{
 				cv::Vec3f colorval = (cv::Vec3f)color_img.at<cv::Vec3b>(p);
 				cv::Mat samp;
-				if( useDepth )
+				if( DATA_CONFIG == GC_DATA_DEPTH )
 				{
 					if(dmask.at<uchar>(p) <= 0)
 						continue;
 					float dval = dmap.at<float>(p);
 
+					// x,y,z
 					samp = ConvertVec2Mat( colorval.val[0], colorval.val[1], colorval.val[2], dval );
 				}
-				else
+				if( DATA_CONFIG == GC_DATA_RGB )
 				{
 					samp = ConvertVec2Mat( colorval.val[0], colorval.val[1], colorval.val[2] );
+				}
+				if( DATA_CONFIG == GC_DATA_RGBD )
+				{
+					if(dmask.at<uchar>(p) <= 0)
+						continue;
+
+					float dval = dmap.at<float>(p);
+					samp = ConvertVec2Mat( colorval.val[0], colorval.val[1], colorval.val[2], dval );
 				}
 
 				if( fg_mask.at<uchar>(p) == cv::GC_BGD || fg_mask.at<uchar>(p) == cv::GC_PR_BGD )
@@ -277,14 +290,14 @@ namespace visualsearch
 		bool useDepth = (!dmap.empty() && !dmask.empty() ? true: false);
 
 		cv::Point p;
-		for( p.y = 0; p.y < color_img.rows; p.y++ )
+		for( p.y = contextBox.y; p.y < contextBox.br().y; p.y++ )
 		{
-			for( p.x = 0; p.x < color_img.cols; p.x++ )
+			for( p.x = contextBox.x; p.x < contextBox.br().x; p.x++ )
 			{
 				cv::Vec3d color = (cv::Vec3d)color_img.at<cv::Vec3b>(p);
 				cv::Mat samp;
 
-				if( useDepth )
+				if( DATA_CONFIG == GC_DATA_DEPTH )
 				{
 					if( dmask.at<uchar>(p) <= 0 )
 						continue;
@@ -292,9 +305,17 @@ namespace visualsearch
 					float dval = dmap.at<float>(p);
 					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
 				}
-				else
+				if( DATA_CONFIG == GC_DATA_RGB )
 					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2]);
-				
+				if( DATA_CONFIG == GC_DATA_RGBD )
+				{
+					if( dmask.at<uchar>(p) <= 0 )
+						continue;
+
+					float dval = dmap.at<float>(p);
+					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
+				}
+
 				compIdxs.at<int>(p) = fg_mask.at<uchar>(p) == cv::GC_BGD || fg_mask.at<uchar>(p) == cv::GC_PR_BGD ?
 					bgdGGMM.whichComponent(samp) : fgdGGMM.whichComponent(samp);
 			}
@@ -312,27 +333,34 @@ namespace visualsearch
 		cv::Point p;
 		for( int ci = 0; ci < learners::GeneralGMM::componentsCount; ci++ )
 		{
-			for( p.y = 0; p.y < color_img.rows; p.y++ )
+			for( p.y = contextBox.y; p.y < contextBox.br().y; p.y++ )
 			{
-				for( p.x = 0; p.x < color_img.cols; p.x++ )
+				for( p.x = contextBox.x; p.x < contextBox.br().x; p.x++ )
 				{
 					if( compIdxs.at<int>(p) == ci )
 					{
 						cv::Vec3d color = (cv::Vec3d)color_img.at<cv::Vec3b>(p);
 						cv::Mat samp;
 
-						if( useDepth )
+						if( DATA_CONFIG == GC_DATA_DEPTH )
 						{
-							// rgbd
 							if( dmask.at<uchar>(p) <= 0 )
 								continue;
 
 							float dval = dmap.at<float>(p);
 							samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
 						}
-						else
+						if( DATA_CONFIG == GC_DATA_RGB )
 						{
 							samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2]);
+						}
+						if( DATA_CONFIG == GC_DATA_RGBD )
+						{
+							if( dmask.at<uchar>(p) <= 0 )
+								continue;
+
+							float dval = dmap.at<float>(p);
+							samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dval);
 						}
 						
 						if( fg_mask.at<uchar>(p) == cv::GC_BGD || fg_mask.at<uchar>(p) == cv::GC_PR_BGD )
@@ -358,8 +386,8 @@ namespace visualsearch
 		// check consistency
 		bool useDepth = (!dmap.empty() && !dmask.empty() ? true: false);
 
-		int vtxCount = img.cols*img.rows,
-			edgeCount = 2*(4*img.cols*img.rows - 3*(img.cols + img.rows) + 2);
+		int vtxCount = img.rows*img.cols,
+			edgeCount = 2*(4*img.rows*img.cols - 3*(img.rows + img.cols) + 2);
 		graph.create(vtxCount, edgeCount);
 		cv::Point p;
 		for( p.y = 0; p.y < img.rows; p.y++ )
@@ -371,9 +399,11 @@ namespace visualsearch
 				cv::Vec3d color = (cv::Vec3d)img.at<cv::Vec3b>(p);
 
 				cv::Mat samp;
-				if( !useDepth )
+				if( DATA_CONFIG == GC_DATA_RGB )
 					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2]);
-				else
+				if( DATA_CONFIG == GC_DATA_DEPTH )
+					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dmap.at<double>(p));
+				if( DATA_CONFIG == GC_DATA_RGBD )
 					samp = ConvertVec2Mat(color.val[0], color.val[1], color.val[2], dmap.at<double>(p));
 
 				// set t-weights
@@ -446,11 +476,11 @@ namespace visualsearch
 
 	bool GrabCutter::predictMask(const cv::Mat& color_img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& mask, const cv::Rect& box, bool show)
 	{
-		if( !dmap.empty() && !dmask.empty() && bgdGGMM.featureDim != 4 )
+		/*if( !dmap.empty() && !dmask.empty() )
 		{
 			std::cerr<<"Inconsistent model format for rgbd mode."<<std::endl;
 			return false;
-		}
+		}*/
 
 		bool useDepth = (!dmap.empty() && !dmask.empty() ? true: false);
 
@@ -463,7 +493,7 @@ namespace visualsearch
 		disp_mask.setTo(cv::Vec3b(0,255,0));
 
 		// predict for pixels inside rect
-		if( dmap.empty() || dmask.empty() )
+		if( DATA_CONFIG == GC_DATA_RGB )
 		{
 			// rgb mode
 			for(int r=box.y; r<box.br().y; r++)
@@ -478,7 +508,7 @@ namespace visualsearch
 				}
 			}
 		}
-		else
+		if(DATA_CONFIG == GC_DATA_DEPTH)
 		{
 			// rgbd
 			for(int r=box.y; r<box.br().y; r++)
@@ -525,13 +555,23 @@ namespace visualsearch
 			return false;
 		}
 		
+		// init context box as twice large of the fg box
+		fgBox = rect;
+		cv::Point fgCenter(fgBox.x+fgBox.width/2, fgBox.y+fgBox.height/2);
+		contextBox.x = MAX(fgCenter.x - fgBox.width, 0);
+		contextBox.y = MAX(fgCenter.y - fgBox.height, 0);
+		contextBox.width = MIN(fgCenter.x + fgBox.width, img.cols-1) - contextBox.x;
+		contextBox.height = MIN(fgCenter.y + fgBox.height, img.rows-1) - contextBox.y;
 
-		if(dmap.empty() && dmask.empty())
+		//contextBox.x = 0, contextBox.y = 0;
+		//contextBox.width = img.cols-1, contextBox.height = img.rows-1;
+
+		if( DATA_CONFIG == GC_DATA_RGB )
 		{
 			bgdGGMM = learners::GeneralGMM( 3 );
 			fgdGGMM = learners::GeneralGMM( 3 );
 		}
-		else
+		if( DATA_CONFIG == GC_DATA_RGBD )
 		{
 			bgdGGMM = learners::GeneralGMM( 4 );
 			fgdGGMM = learners::GeneralGMM( 4 );
@@ -546,6 +586,8 @@ namespace visualsearch
 
 			initRGBDGMMs( img, dmap, dmask, fg_mask );
 		}
+		//predictMask(img, dmap, dmask, fg_mask, rect, true);
+		//cv::waitKey(0);
 
 		if( iterCount <= 0)
 			return false;
@@ -567,17 +609,32 @@ namespace visualsearch
 		if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 			calcNWeightsRGBD(img, cv::Mat(), cv::Mat(), leftW, upleftW, upW, uprightW, beta, gamma);
 
+		double start_t = 0;
 		for( int i = 0; i < iterCount; i++ )
 		{
+			std::cout<<"Grabcut iter: "<<i<<std::endl;
 			GCGraph<double> graph;
+	
 			// assign each pixel to one of the component based on new mask
+			start_t = cv::getTickCount();
 			assignRGBDGMMsComponents( img, dmap, dmask, fg_mask, compIdxs );
+			std::cout<<"Assign GMM: "<<(cv::getTickCount()-start_t) / cv::getTickFrequency()<<"s"<<std::endl;
+
 			// re-estimate GMM model using the new mask
+			start_t = cv::getTickCount();
 			learnRGBDGMMs( img, dmap, dmask, fg_mask, compIdxs );
+			std::cout<<"learn GMM: "<<(cv::getTickCount()-start_t) / cv::getTickFrequency()<<"s"<<std::endl;
+			
+			// show prediction mask based on data
+			//predictMask(img, dmap, dmask, fg_mask, rect, true);
+			//cv::waitKey(0);
+
+			start_t = cv::getTickCount();
 			// do graph-cut
 			constructRGBDGCGraph( img, dmap, dmask, fg_mask, lambda, leftW, upleftW, upW, uprightW, graph );
 			// do segment prediction
 			estimateSegmentation( graph, fg_mask );
+			std::cout<<"graphcut: "<<(cv::getTickCount()-start_t) / cv::getTickFrequency()<<"s"<<std::endl;
 		}
 
 		return true;

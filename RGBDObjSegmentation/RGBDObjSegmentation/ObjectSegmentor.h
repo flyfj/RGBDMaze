@@ -32,6 +32,7 @@ namespace visualsearch
 		static cv::Point grabStartPt;
 
 		static cv::Mat toProcessImg;	// for grabcut use, better not static
+		static cv::Mat toProcessDmap;
 
 		GrabCutter grabcutter;
 

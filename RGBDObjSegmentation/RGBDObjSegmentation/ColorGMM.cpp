@@ -195,10 +195,21 @@ namespace visualsearch
 				//CV_Assert( covDets[ci] > std::numeric_limits<double>::epsilon() );
 
 				cv::Mat diff = samp - means[ci];
-				cv::Mat val = - diff * inv_covs[ci] * diff.t() * 0.5f;
-				CV_Assert( val.rows == 1 && val.cols == 1 );
+				double val = 0;
+				for(int i=0; i<diff.cols; i++)
+				{
+					double cur_sum = 0;
+					for(int j=0; j<diff.cols; j++)
+					{
+						cur_sum += inv_covs[ci].at<double>(i, j) * diff.at<double>(0, j);
+					}
+					val += diff.at<double>(0, i) * cur_sum;
+				}
+
+				//cv::Mat val = - diff * inv_covs[ci] * diff.t() * 0.5f;
+				//CV_Assert( val.rows == 1 && val.cols == 1 );val.at<double>(0,0)
 			
-				res = 1.0f / sqrt(covDets[ci]) * exp(val.at<double>(0,0));
+				res = 1.0f / sqrt(covDets[ci]) * exp(-val*0.5f);
 			}
 			return res;
 		}

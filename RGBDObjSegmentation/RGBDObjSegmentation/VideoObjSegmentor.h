@@ -23,10 +23,12 @@ namespace rgbdvision
 	{
 	private:
 
+		cv::Mat invF;	// used for backproject 2d to 3d
 		std::vector<cv::Mat> frames;
 		std::vector<cv::Mat> dmaps;
 		std::vector<cv::Mat> dmasks;
 		std::vector<cv::Mat> fgMasks;
+		std::vector<cv::Mat> w2c;
 		visualsearch::ObjectSegmentor obj_segmentor;
 
 		// bounding box of all mask points
@@ -37,9 +39,13 @@ namespace rgbdvision
 
 		bool OutputMaskToFile(ofstream& out, const cv::Mat& color_img, const cv::Mat& mask, bool hasProb = false);
 
-		bool LoadDepthmap(const string& filename, cv::Mat& dmap);
+		bool LoadBinaryDepthmap(const string& filename, cv::Mat& dmap, int w, int h);
+
+		bool LoadMat(const string& filename, cv::Mat& rmat, int w, int h);
 
 		bool ConvertDmapForDisplay(const cv::Mat& dmap, cv::Mat& dmap_disp);
+
+		bool Proj2Dto3D(const cv::Mat& fg_mask, const cv::Mat& dmap, const cv::Mat& w2c_mat, std::vector<cv::Vec3f>& pts3d);
 
 	public:
 		VideoObjSegmentor(void);
