@@ -81,117 +81,20 @@ namespace rgbdvision
 		return true;
 	}
 
-	bool VideoObjSegmentor::OutputMaskToFile(ofstream& out, const cv::Mat& color_img, const cv::Mat& mask, bool hasProb)
+	bool VideoObjSegmentor::ExpandBoxByMask(const cv::Mat& mask, cv::Rect& newBox, int rangePixels)
 	{
-		if(mask.empty())
-		{
-			std::cerr<<"Empty mask."<<std::endl;
-			return false;
-		}
+		cv::Mat newmask;
+		// use dilation
+		cv::Mat filter = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(2*rangePixels+1, 2*rangePixels+1));
+		cv::dilate(mask, newmask, filter);
 
-		for(int r=0; r<mask.rows; r++)
-		{
-			for(int c=0; c<mask.cols; c++)
-			{
-				if(hasProb)
-				{
-					// TODO: implement this
-					cv::Vec3b cur_color = color_img.at<cv::Vec3b>(r,c);
-					//out<<(c==0? "": " ")<<(mask.at<uchar>(r,c)>0? )
-				}
-				else
-				{
-					out<<(c==0? "": " ")<<(int)mask.at<uchar>(r,c);
-				}
-			}
-			out<<std::endl;
-		}
+		MaskBoundingBox(newmask, newBox);
 
-		return true;
-	}
-
-	bool VideoObjSegmentor::LoadBinaryDepthmap(const string& filename, cv::Mat& dmap, int w, int h)
-	{
-		dmap.create(h, w, CV_32F);
-
-		ifstream in(filename, ios::binary);
-		if( !in.is_open() )
-			return false;
-
-		// get file size
-		in.seekg (0, in.end);
-		int length = in.tellg();
-		in.seekg (0, in.beg);
-
-		// verify
-		assert( length == w*h*sizeof(float) );
-
-		// read data
-		vector<float> data(length / sizeof(float) + 1);
-		in.read((char*)(&data[0]), length);
-
-		for(int r=0; r<h; r++)
-		{
-			for(int c=0; c<w; c++)
-				dmap.at<float>(r,c) = data[r*w+c];
-		}
-
-		return true;
-	}
-
-	bool VideoObjSegmentor::LoadMat(const string& filename, cv::Mat& rmat, int w, int h)
-	{
-		ifstream in(filename);
-		if( !in.is_open() )
-			return false;
-
-		rmat.create(h, w, CV_32F);
-		for(int r=0; r<h; r++)
-		{
-			for(int c=0; c<w; c++)
-			{
-				in>>rmat.at<float>(r,c);
-			}
-		}
-
-		return true;
-	}
-
-	bool VideoObjSegmentor::ConvertDmapForDisplay(const cv::Mat& dmap, cv::Mat& dmap_disp)
-	{
-		dmap_disp = dmap.clone();
-		cv::normalize(dmap_disp, dmap_disp, 1, 0, cv::NORM_MINMAX);
-		dmap.convertTo(dmap_disp, CV_8U, 255);
-
-		//cv::cvtColor(dmap_disp, dmap_disp, CV_GRAY2BGR);
-
-		return true;
-	}
-
-	bool VideoObjSegmentor::Proj2Dto3D(const cv::Mat& fg_mask, const cv::Mat& dmap, const cv::Mat& w2c_mat, std::vector<cv::Vec3f>& pts3d)
-	{
-		// homogeneous coordinates: (x, y, d)
-		cv::Mat homo_coords(0, 0, CV_32F);
-		cv::Mat dvalmap(0, 0, CV_32F);
-		for(int r=0; r<fg_mask.rows; r++)
-		{
-			for(int c=0; c<fg_mask.cols; c++)
-			{
-				if(fg_mask.at<uchar>(r,c) > 0)
-				{
-					float dval = dmap.at<float>(r,c);
-					cv::Vec3f cur_pt(c, r, dval);
-					homo_coords.push_back( cv::Mat(cur_pt).t() );
-					cv::Vec3f cur_dval(dval, dval, dval);
-					dvalmap.push_back( cv::Mat(cur_dval).t() );
-				}
-			}
-		}
-
-		// convert to local coordinates (x, y, z)
-		homo_coords = homo_coords / dvalmap;
-
-
+		cv::imshow("old mask", mask*255);
+		cv::imshow("new mask", newmask*255);
+		cv::waitKey(0);
+		cv::destroyWindow("old mask");
+		cv::destroyWindow("new mask");
 
 		return true;
 	}
@@ -238,7 +141,7 @@ namespace rgbdvision
 				// load depth map
 				sprintf_s(str, "%d_depth.bin", i);
 				string dmapfile = frame_dir + string(str);
-				if( !LoadBinaryDepthmap(dmapfile, dmaps[i-start_id], 640, 480) )
+				if( !visualsearch::RGBDTools::LoadBinaryDepthmap(dmapfile, dmaps[i-start_id], 640, 480) )
 				{
 					std::cerr<<"Fail to load depth map."<<std::endl;
 					return false;
@@ -251,14 +154,14 @@ namespace rgbdvision
 				cv::resize(dmasks[i-start_id], dmasks[i-start_id], cv::Size(old_sz.width/2, old_sz.height/2));
 
 				cv::Mat dmap_disp;
-				ConvertDmapForDisplay(dmaps[i-start_id], dmap_disp);
+				visualsearch::RGBDTools::ConvertDmapForDisplay(dmaps[i-start_id], dmap_disp);
 				cv::imshow("depth frame", dmap_disp);
 				cv::waitKey(10);
 
 				// load w2c matrix
 				sprintf_s(str, "%d_w2c.txt", i);
 				string cmatfile = frame_dir + string(str);
-				if( !LoadMat(cmatfile, w2c[i-start_id], 4, 4) )
+				if( !visualsearch::RGBDTools::LoadMat(cmatfile, w2c[i-start_id], 4, 4) )
 				{
 					std::cerr<<"Fail to load w2c matrix."<<std::endl;
 					return false;
@@ -269,6 +172,22 @@ namespace rgbdvision
 		}
 
 		cv::destroyAllWindows();
+
+		return true;
+	}
+
+	bool VideoObjSegmentor::DoRGBDOverSegmentation(const string& frame_dir, int start_id, int end_id)
+	{
+		// load data
+		if( !LoadVideoFrames(frame_dir, start_id, end_id, SEG_RGBD) )
+			return false;
+
+		for(size_t i=0; i<frames.size(); i++)
+		{
+			std::vector<visualsearch::SuperPixel> rgbd_sps;
+			obj_segmentor.ExtractRGBDSuperpixel(frames[i], dmaps[i], rgbd_sps);
+			cv::waitKey(0);
+		}
 
 		return true;
 	}
@@ -324,21 +243,22 @@ namespace rgbdvision
 			if(seg_input == SEG_RGBD)
 			{
 				cv::Mat dmap_disp;
-				ConvertDmapForDisplay(dmaps[i], dmap_disp);
+				visualsearch::RGBDTools::ConvertDmapForDisplay(dmaps[i], dmap_disp);
 				cv::imshow("cur_dmap", dmap_disp);
 			}
 			
 			// expand box by ratio
 			float ratio = 0.3f;
+			float rangePixels = 10;	// each pixel changes at most 10 pixels between two frames
 			cv::Rect newBox;
-			ExpandBox(box, newBox, ratio, frames[i].cols, frames[i].rows);
+			ExpandBoxByMask(fgMasks[i-1], newBox, rangePixels);
+			//ExpandBox(box, newBox, rangePixels, frames[i].cols, frames[i].rows);
 
 			box = newBox;
 			cv::rectangle(disp_img, box, CV_RGB(0, 255, 0));
 			cv::imshow("cur_frame", disp_img);
-
-			obj_segmentor.PredictSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
-			cv::waitKey(10);
+			//obj_segmentor.PredictSegmentMask(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, true);
+			cv::waitKey(0);
 
 			obj_segmentor.RunRGBDGrabCut(frames[i], dmaps[i], dmasks[i], fgMasks[i], box, false);
 
@@ -356,13 +276,13 @@ namespace rgbdvision
 
 			// save segment result
 			// resize mask back
-			cv::resize(fgMasks[i], fgMasks[i], cv::Size(fgMasks[i].cols*2, fgMasks[i].rows*2));
+			//cv::resize(fgMasks[i], fgMasks[i], cv::Size(fgMasks[i].cols*2, fgMasks[i].rows*2));
 
 			savefile = frame_dir + string(str) + ".txt";
 			std::ofstream out(savefile);
-			OutputMaskToFile(out, frames[i], fgMasks[i]);
+			visualsearch::RGBDTools::OutputMaskToFile(out, frames[i], fgMasks[i]);
 
-			if( cv::waitKey(10) == 'q' )
+			if( cv::waitKey(0) == 'q' )
 				break;
 
 			std::cout<<"Finish frame "<<i<<std::endl<<std::endl;

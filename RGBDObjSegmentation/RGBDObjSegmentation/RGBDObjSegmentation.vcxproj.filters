@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GraphBasedSegmentor">
+      <UniqueIdentifier>{0bc6490e-fac3-45b1-9557-e93d055121d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ObjectSegmentor.cpp">
@@ -28,6 +31,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GrabCutter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSegmentor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBDTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,6 +57,39 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GrabCutter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSegmentor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\convolve.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\disjoint-set.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\filter.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\image.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\imconv.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\imutil.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\misc.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\segment-graph.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphBasedSegmentor\segment-image.h">
+      <Filter>GraphBasedSegmentor</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBDTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

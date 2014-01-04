@@ -46,6 +46,9 @@ namespace visualsearch
 		learners::GeneralGMM bgdGGMM;
 		learners::GeneralGMM fgdGGMM;
 
+		learners::ColorGMM bg;
+		learners::ColorGMM fg;
+
 		cv::Rect contextBox;
 		cv::Rect fgBox;
 

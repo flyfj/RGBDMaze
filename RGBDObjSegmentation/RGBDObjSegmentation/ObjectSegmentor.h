@@ -7,7 +7,8 @@
 
 #include "common_libs.h"
 #include "GrabCutter.h"
-
+#include "ImageSegmentor.h"
+#include "RGBDTools.h"
 
 namespace visualsearch
 {
@@ -25,7 +26,7 @@ namespace visualsearch
 	{
 	public:
 
-		// for grabcut interaction
+		// grabcut interaction
 		static cv::Scalar BOXDRAWCOLOR;
 		static uchar grabState;
 		static cv::Rect grabBox;
@@ -36,11 +37,20 @@ namespace visualsearch
 
 		GrabCutter grabcutter;
 
+		// fixation
+		static std::vector<visualsearch::SuperPixel> rgbd_superpixels;
+		static cv::Mat rgbd_idx_img;
+
+		visualsearch::ImageSegmentor img_segmentor;
+
 	public:
 
 		ObjSegmentationType seg_type;
 
 		ObjectSegmentor(void);
+
+		//////////////////////////////////////////////////////////////////////////
+		// grabcut methods
 
 		// reset
 		void ResetGrabcut();
@@ -61,6 +71,15 @@ namespace visualsearch
 
 		// interactive cut
 		bool InteractiveCut(const cv::Mat& img, const cv::Mat& dmap, const cv::Mat& dmask, cv::Mat& fg_mask);
+
+		//////////////////////////////////////////////////////////////////////////
+		// fixation segmentation
+
+		static void FixationMouseCallback(int event, int x, int y, int, void* params);
+
+		bool ExtractRGBDSuperpixel(const cv::Mat& color_img, const cv::Mat& depth_map, std::vector<visualsearch::SuperPixel>& rgbd_sps);
+
+		bool FixationCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask);
 	};
 }
 

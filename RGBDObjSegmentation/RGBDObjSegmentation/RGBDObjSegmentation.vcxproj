@@ -86,8 +86,10 @@
   <ItemGroup>
     <ClCompile Include="ColorGMM.cpp" />
     <ClCompile Include="GrabCutter.cpp" />
+    <ClCompile Include="ImageSegmentor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectSegmentor.cpp" />
+    <ClCompile Include="RGBDTools.cpp" />
     <ClCompile Include="VideoObjSegmentor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -95,7 +97,18 @@
     <ClInclude Include="ColorGMM.h" />
     <ClInclude Include="gcgraph.hpp" />
     <ClInclude Include="GrabCutter.h" />
+    <ClInclude Include="GraphBasedSegmentor\convolve.h" />
+    <ClInclude Include="GraphBasedSegmentor\disjoint-set.h" />
+    <ClInclude Include="GraphBasedSegmentor\filter.h" />
+    <ClInclude Include="GraphBasedSegmentor\image.h" />
+    <ClInclude Include="GraphBasedSegmentor\imconv.h" />
+    <ClInclude Include="GraphBasedSegmentor\imutil.h" />
+    <ClInclude Include="GraphBasedSegmentor\misc.h" />
+    <ClInclude Include="GraphBasedSegmentor\segment-graph.h" />
+    <ClInclude Include="GraphBasedSegmentor\segment-image.h" />
+    <ClInclude Include="ImageSegmentor.h" />
     <ClInclude Include="ObjectSegmentor.h" />
+    <ClInclude Include="RGBDTools.h" />
     <ClInclude Include="VideoObjSegmentor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

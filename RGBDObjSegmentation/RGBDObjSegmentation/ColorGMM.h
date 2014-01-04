@@ -98,6 +98,17 @@ namespace visualsearch
 
 			int sampleCounts[componentsCount];
 			int totalSampleCount;
+
+			// for 3 dimension use
+			double* coefs;
+			double* mean;
+			double* cov;
+
+			double inverseCovs[componentsCount][3][3];
+			double covDeterms[componentsCount];
+
+			double sums[componentsCount][3];
+			double prods[componentsCount][3][3];
 		};
 	}
 }

@@ -16,17 +16,17 @@ namespace visualsearch
 			{
 				cv::Vec3d color_val = (cv::Vec3d)img.at<cv::Vec3b>(y,x);
 
-				if( useDepth && dmask.at<uchar>(y, x) <= 0)
+				if( SMOOTH_CONFIG == GC_SMOOTH_DEPTH && dmask.at<uchar>(y, x) <= 0)
 					continue;
 
 				if( x>0 ) // left
 				{
-					if(useDepth)
+					if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y, x-1);
 						beta += diff*diff;
 					}
-					else
+					if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y, x-1);
 						beta += diff.dot(diff);
@@ -34,12 +34,12 @@ namespace visualsearch
 				}
 				if( y>0 && x>0 ) // upleft
 				{
-					if(useDepth)
+					if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1, x-1);
 						beta += diff*diff;
 					}
-					else
+					if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x-1);
 						beta += diff.dot(diff);
@@ -47,12 +47,12 @@ namespace visualsearch
 				}
 				if( y>0 ) // up
 				{
-					if(useDepth)
+					if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1,x);
 						beta += diff*diff;
 					}
-					else
+					if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x);
 						beta += diff.dot(diff);
@@ -60,12 +60,12 @@ namespace visualsearch
 				}
 				if( y>0 && x<dmap.cols-1) // upright
 				{
-					if(useDepth)
+					if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1, x+1);
 						beta += diff*diff;
 					}
-					else
+					if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x+1);
 						beta += diff.dot(diff);
@@ -77,9 +77,9 @@ namespace visualsearch
 			beta = 0;
 		else
 		{
-			if(useDepth)
+			if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 				beta = 1.f / (2 * beta / cv::countNonZero(dmask));
-			else
+			if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 				beta = 1.f / (2 * beta/(4*img.cols*img.rows - 3*img.cols - 3*img.rows + 2));
 		}
 
@@ -113,28 +113,28 @@ namespace visualsearch
 
 				if( x-1>=0 ) // left
 				{
-					if( useDepth )
+					if( SMOOTH_CONFIG == GC_SMOOTH_DEPTH )
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y, x-1);
 						leftW.at<double>(y,x) = gamma * exp(-beta*diff*diff);
 					}
-					else
+					if( SMOOTH_CONFIG == GC_SMOOTH_RGB )
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y, x-1);
 						leftW.at<double>(y,x) = gamma * exp(-beta*diff.dot(diff));
-					}		
+					}
 				}
 				else
 					leftW.at<double>(y,x) = 0;
 
 				if( x-1>=0 && y-1>=0 ) // upleft
 				{
-					if( useDepth )
+					if( SMOOTH_CONFIG == GC_SMOOTH_DEPTH )
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1,x-1);
 						upleftW.at<double>(y,x) = gammaDivSqrt2 * exp(-beta*diff*diff);
 					}
-					else
+					if( SMOOTH_CONFIG == GC_SMOOTH_RGB )
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x-1);
 						upleftW.at<double>(y,x) = gammaDivSqrt2 * exp(-beta*diff.dot(diff));
@@ -145,12 +145,12 @@ namespace visualsearch
 
 				if( y-1>=0 ) // up
 				{
-					if( useDepth )
+					if( SMOOTH_CONFIG == GC_SMOOTH_DEPTH )
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1,x);
 						upW.at<double>(y,x) = gamma * exp(-beta*diff*diff);
 					}
-					else
+					if( SMOOTH_CONFIG == GC_SMOOTH_RGB )
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x);
 						upW.at<double>(y,x) = gamma * exp(-beta*diff.dot(diff));
@@ -161,12 +161,12 @@ namespace visualsearch
 
 				if( x+1<dmap.cols && y-1>=0 ) // upright
 				{
-					if( useDepth )
+					if( SMOOTH_CONFIG == GC_SMOOTH_DEPTH )
 					{
 						float diff = dmap.at<float>(y, x) - dmap.at<float>(y-1, x+1);
 						uprightW.at<double>(y, x) = gammaDivSqrt2 * exp(-beta*diff*diff);
 					}
-					else
+					if( SMOOTH_CONFIG == GC_SMOOTH_RGB )
 					{
 						cv::Vec3d diff = color_val - (cv::Vec3d)img.at<cv::Vec3b>(y-1, x+1);
 						uprightW.at<double>(y, x) = gammaDivSqrt2 * exp(-beta*diff.dot(diff));
@@ -563,8 +563,8 @@ namespace visualsearch
 		contextBox.width = MIN(fgCenter.x + fgBox.width, img.cols-1) - contextBox.x;
 		contextBox.height = MIN(fgCenter.y + fgBox.height, img.rows-1) - contextBox.y;
 
-		//contextBox.x = 0, contextBox.y = 0;
-		//contextBox.width = img.cols-1, contextBox.height = img.rows-1;
+		contextBox.x = 0, contextBox.y = 0;
+		contextBox.width = img.cols-1, contextBox.height = img.rows-1;
 
 		if( DATA_CONFIG == GC_DATA_RGB )
 		{
@@ -586,8 +586,9 @@ namespace visualsearch
 
 			initRGBDGMMs( img, dmap, dmask, fg_mask );
 		}
-		//predictMask(img, dmap, dmask, fg_mask, rect, true);
-		//cv::waitKey(0);
+		std::cout<<"Prediction from initial gmm learning"<<std::endl;
+		predictMask(img, dmap, dmask, fg_mask, rect, true);
+		cv::waitKey(0);
 
 		if( iterCount <= 0)
 			return false;
@@ -596,18 +597,35 @@ namespace visualsearch
 			checkMask( img, fg_mask );
 
 		const double gamma = 50;
-		const double lambda = 9*gamma;
-		double beta = 1;
+		const double lambda = 9*gamma;	// 9
+		double beta = 1, dbeta = 1, rgbbeta = 1;
 		if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 			beta = calcBetaRGBD( img, dmap, dmask );
 		if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 			beta = calcBetaRGBD( img, cv::Mat(), cv::Mat() );
+		if(SMOOTH_CONFIG == GC_SMOOTH_RGBD)
+		{
+			dbeta = calcBetaRGBD( img, dmap, dmask );
+			rgbbeta = calcBetaRGBD( img, cv::Mat(), cv::Mat() );
+		}
 
 		cv::Mat leftW, upleftW, upW, uprightW;
 		if(SMOOTH_CONFIG == GC_SMOOTH_DEPTH)
 			calcNWeightsRGBD(img, dmap, dmask, leftW, upleftW, upW, uprightW, beta, gamma);
 		if(SMOOTH_CONFIG == GC_SMOOTH_RGB)
 			calcNWeightsRGBD(img, cv::Mat(), cv::Mat(), leftW, upleftW, upW, uprightW, beta, gamma);
+		if(SMOOTH_CONFIG == GC_SMOOTH_RGBD)
+		{
+			cv::Mat d_leftW, d_upleftW, d_upW, d_uprightW;
+			cv::Mat rgb_leftW, rgb_upleftW, rgb_upW, rgb_uprightW;
+			calcNWeightsRGBD(img, dmap, dmask, d_leftW, d_upleftW, d_upW, d_uprightW, dbeta, gamma);
+			calcNWeightsRGBD(img, cv::Mat(), cv::Mat(), rgb_leftW, rgb_upleftW, rgb_upW, rgb_uprightW, rgbbeta, gamma);
+			leftW = d_leftW + rgb_leftW;
+			upleftW = d_upleftW + rgb_upleftW;
+			upW = d_upW + rgb_upW;
+			uprightW = d_uprightW + rgb_uprightW;
+		}
+
 
 		double start_t = 0;
 		for( int i = 0; i < iterCount; i++ )
