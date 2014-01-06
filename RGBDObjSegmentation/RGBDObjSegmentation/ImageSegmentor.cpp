@@ -37,7 +37,7 @@ namespace visualsearch
 		int num_ccs;
 		image<rgb> *seg = segment_image(&input, m_dSmoothSigma, m_dThresholdK, m_dMinArea, &num_ccs, &index);	
 
-		// set up segment image
+		// set up segment color image for visualization
 		m_segImg.create(img.size(), CV_8UC3);
 		for(int y = 0; y < height; y++)	for(int x = 0; x < width; x++)
 		{
@@ -102,5 +102,68 @@ namespace visualsearch
 
 		return num_ccs;
 
+	}
+
+	bool ImageSegmentor::ComputeAdjacencyMat(const std::vector<SuperPixel>& sps, cv::Mat& adjacencyMat)
+	{
+		if(sps.empty())
+		{
+			std::cerr<<"Empty superpixels."<<std::endl;
+			return false;
+		}
+		
+		adjacencyMat.create(sps.size(), sps.size(), CV_8U);
+		adjacencyMat.setTo(0);
+
+		// map all sp index to single image
+		cv::Mat idx_map(sps[0].mask.rows, sps[0].mask.cols, CV_32S);
+		idx_map.setTo(-1);
+		int mask_sum = 0;
+		for(size_t i=0; i<sps.size(); i++)
+		{
+			idx_map.setTo(i, sps[i].mask);
+			mask_sum += cv::countNonZero(sps[i].mask);
+		}
+		// check if masks are complete
+		if(mask_sum != idx_map.rows*idx_map.cols)
+		{
+			std::cerr<<"Not valid superpixel masks."<<std::endl;
+			return false;
+		}
+
+		// set up adjacency mat
+		for(int r=0; r<idx_map.rows; r++)
+		{
+			for(int c=0; c<idx_map.cols; c++)
+			{
+				int cur_sp_id = idx_map.at<int>(r, c);
+				if(r>0)
+				{
+					int top_sp_id = idx_map.at<int>(r-1, c);
+					if(cur_sp_id != top_sp_id)
+						adjacencyMat.at<uchar>(cur_sp_id, top_sp_id) = adjacencyMat.at<uchar>(top_sp_id, cur_sp_id) = 1;
+				}
+				if(r<idx_map.rows)
+				{
+					int bottom_sp_id = idx_map.at<int>(r+1, c);
+					if(cur_sp_id != bottom_sp_id)
+						adjacencyMat.at<uchar>(cur_sp_id, bottom_sp_id) = adjacencyMat.at<uchar>(bottom_sp_id, cur_sp_id) = 1;
+				}
+				if(c<0)
+				{
+					int left_sp_id = idx_map.at<int>(r, c-1);
+					if(cur_sp_id != left_sp_id)
+						adjacencyMat.at<uchar>(cur_sp_id, left_sp_id) = adjacencyMat.at<uchar>(left_sp_id, cur_sp_id) = 1;
+				}
+				if(c<idx_map.cols)
+				{
+					int right_sp_id = idx_map.at<int>(r, c-1);
+					if(cur_sp_id != right_sp_id)
+						adjacencyMat.at<uchar>(cur_sp_id, right_sp_id) = adjacencyMat.at<uchar>(right_sp_id, cur_sp_id) = 1;
+				}
+			}
+		}
+
+		return true;
 	}
 }

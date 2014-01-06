@@ -20,6 +20,7 @@ namespace visualsearch
 		cv::Rect box;
 
 		// features
+		std::vector<cv::Mat> feats;
 	};
 
 	// mainly for oversegmentation
@@ -39,12 +40,16 @@ namespace visualsearch
 		cv::Mat m_segImg;
 		cv::Mat m_idxImg;	// superpixel index
 		cv::Mat m_mean_img;	// set mean color to pixels in same segment
+		cv::Mat m_adjacency_mat;	// adjacency matrix for superpixels
 
 	public:
 
 		ImageSegmentor(void);
 
 		int DoSegmentation(const cv::Mat& img);
+
+		// this is used for any input collection
+		bool ComputeAdjacencyMat(const std::vector<SuperPixel>& sps, cv::Mat& adjacencyMat);
 	};
 
 }

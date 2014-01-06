@@ -275,34 +275,38 @@ namespace visualsearch
 		}
 		std::cout<<"Time cost for rgbd oversegmentation: "<<(cv::getTickCount()-start_t) / cv::getTickFrequency()<<"s"<<endl;
 
-		// compose a segment map to visualize rgbd sps
-		cv::RNG rng(30000);
-		cv::Mat rgbd_sp_map(color_img.rows, color_img.cols, CV_8UC3);
-		rgbd_idx_img.create(color_img.rows, color_img.cols, CV_32S);
-		for(size_t i=0; i<rgbd_sps.size(); i++)
+		if(verbose)
 		{
-			cv::Vec3b cur_color(rng.next() % 256, rng.next() % 256, rng.next() % 256);
-			rgbd_sp_map.setTo(cur_color, rgbd_sps[i].mask);
-			rgbd_idx_img.setTo(i, rgbd_sps[i].mask);
-		}
-		std::cout<<"rgbd sp num: "<<rgbd_sps.size()<<endl;
-		cv::imshow("rgbd_sps", rgbd_sp_map);
-		cv::waitKey(0);
+			// compose a segment map to visualize rgbd sps
+			cv::RNG rng(30000);
+			cv::Mat rgbd_sp_map(color_img.rows, color_img.cols, CV_8UC3);
+			rgbd_idx_img.create(color_img.rows, color_img.cols, CV_32S);
+			for(size_t i=0; i<rgbd_sps.size(); i++)
+			{
+				cv::Vec3b cur_color(rng.next() % 256, rng.next() % 256, rng.next() % 256);
+				rgbd_sp_map.setTo(cur_color, rgbd_sps[i].mask);
+				rgbd_idx_img.setTo(i, rgbd_sps[i].mask);
+			}
+			std::cout<<"rgbd sp num: "<<rgbd_sps.size()<<endl;
+			cv::imshow("rgbd_sps", rgbd_sp_map);
+			cv::waitKey(0);
 
-		// show fixated superpixel
-		cv::Point fixationPt(150,150);
-		cv::Vec3b sel_color(255,255,255);
-		int sel_id = rgbd_idx_img.at<int>(fixationPt.y, fixationPt.x);
-		rgbd_sp_map.setTo(sel_color, rgbd_sps[sel_id].mask);
-		cv::circle(rgbd_sp_map, fixationPt, 5, CV_RGB(0,0,0));
-		cv::imshow("sel_seg", rgbd_sp_map);
-		cv::waitKey(0);
+			// show fixated superpixel
+			cv::Point fixationPt(150,150);
+			cv::Vec3b sel_color(255,255,255);
+			int sel_id = rgbd_idx_img.at<int>(fixationPt.y, fixationPt.x);
+			rgbd_sp_map.setTo(sel_color, rgbd_sps[sel_id].mask);
+			cv::circle(rgbd_sp_map, fixationPt, 5, CV_RGB(0,0,0));
+			cv::imshow("sel_seg", rgbd_sp_map);
+			cv::waitKey(0);
+		}
 
 		return true;
 	}
 
 	bool ObjectSegmentor::FixationCut(const cv::Mat& color_img, const cv::Mat& dmap, cv::Mat& fg_mask)
 	{
+
 
 		return true;
 	}
