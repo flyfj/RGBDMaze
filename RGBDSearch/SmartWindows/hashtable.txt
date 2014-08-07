@@ -1,0 +1,1586 @@
+635
+25520005 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_116_depthcrop.png
+69905744 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_112_depthcrop.png
+81828884 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_108_depthcrop.png
+81972308 6
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_118_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_124_depthcrop.png
+81976340 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_111_depthcrop.png
+81976404 6
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_119_depthcrop.png
+81976452 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_108_depthcrop.png
+81976468 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_107_depthcrop.png
+81976532 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_112_depthcrop.png
+81976533 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_110_depthcrop.png
+82238708 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_100_depthcrop.png
+94805702 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_104_depthcrop.png
+94821540 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_105_depthcrop.png
+94821604 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_103_depthcrop.png
+98737172 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_107_depthcrop.png
+99000022 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_103_depthcrop.png
+99015844 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_106_depthcrop.png
+101330393 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_100_depthcrop.png
+103427529 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_101_depthcrop.png
+103458249 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_102_depthcrop.png
+111598836 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_101_depthcrop.png
+134786516 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_141_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_143_depthcrop.png
+134787024 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_145_depthcrop.png
+134882242 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_126_depthcrop.png
+134882258 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_127_depthcrop.png
+134883284 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_136_depthcrop.png
+134884820 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_139_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_144_depthcrop.png
+134918100 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_142_depthcrop.png
+135144386 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_123_depthcrop.png
+135144402 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_125_depthcrop.png
+135226757 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_113_depthcrop.png
+135930310 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_110_depthcrop.png
+135930822 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_116_depthcrop.png
+136840464 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_141_depthcrop.png
+136875396 7
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_118_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_127_depthcrop.png
+136875412 33
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_105_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_10_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_119_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_12_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_131_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_134_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_137_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_138_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_13_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_141_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_142_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_143_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_145_depthcrop.png
+136875476 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_144_depthcrop.png
+136978886 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_108_depthcrop.png
+136978902 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_109_depthcrop.png
+136979394 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_122_depthcrop.png
+136979410 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_114_depthcrop.png
+136979414 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_115_depthcrop.png
+137896786 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_113_depthcrop.png
+137933308 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_130_depthcrop.png
+138027456 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_106_depthcrop.png
+138027458 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_111_depthcrop.png
+138027460 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_105_depthcrop.png
+138027970 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_119_depthcrop.png
+138027974 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_118_depthcrop.png
+138060228 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_100_depthcrop.png
+142832848 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_102_depthcrop.png
+142832849 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_104_depthcrop.png
+143484292 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_114_depthcrop.png
+166395380 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_129_depthcrop.png
+170429828 5
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_110_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_128_depthcrop.png
+170429844 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_136_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bowl\bowl_1\bowl_1_1_139_depthcrop.png
+170816897 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_112_depthcrop.png
+204139988 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_103_depthcrop.png
+205136324 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_104_depthcrop.png
+205188564 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_110_depthcrop.png
+208317780 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_111_depthcrop.png
+209940560 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_100_depthcrop.png
+216190036 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_126_depthcrop.png
+216190300 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_127_depthcrop.png
+216722652 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_131_depthcrop.png
+217771476 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_112_depthcrop.png
+219856212 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_115_depthcrop.png
+221949268 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_113_depthcrop.png
+221965780 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_118_depthcrop.png
+222035965 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_118_depthcrop.png
+225115636 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_128_depthcrop.png
+225181173 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_111_depthcrop.png
+225181181 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_114_depthcrop.png
+227196244 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_116_depthcrop.png
+229293524 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_119_depthcrop.png
+229301316 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_105_depthcrop.png
+229304668 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_135_depthcrop.png
+229309908 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_121_depthcrop.png
+229571961 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_140_depthcrop.png
+232954964 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_106_depthcrop.png
+232963156 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_109_depthcrop.png
+233491924 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_128_depthcrop.png
+233498964 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_133_depthcrop.png
+233499732 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_132_depthcrop.png
+233500028 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_134_depthcrop.png
+233500116 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_129_depthcrop.png
+233504092 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_130_depthcrop.png
+233569789 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_107_depthcrop.png
+234552820 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_117_depthcrop.png
+367435478 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_102_depthcrop.png
+403317712 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_133_depthcrop.png
+403317714 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_131_depthcrop.png
+403317716 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_134_depthcrop.png
+403318228 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_138_depthcrop.png
+403318740 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_137_depthcrop.png
+403320276 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_140_depthcrop.png
+403352528 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_130_depthcrop.png
+404366290 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_129_depthcrop.png
+406463440 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_132_depthcrop.png
+408560578 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_128_depthcrop.png
+477736783 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_12_depthcrop.png
+482013012 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_100_depthcrop.png
+493551092 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_113_depthcrop.png
+493616637 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_116_depthcrop.png
+497741268 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_122_depthcrop.png
+497741276 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_136_depthcrop.png
+501988597 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_101_depthcrop.png
+502005237 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_112_depthcrop.png
+503053813 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_109_depthcrop.png
+666623345 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_12_depthcrop.png
+666623347 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_13_depthcrop.png
+674792720 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_142_depthcrop.png
+674825616 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_144_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_145_depthcrop.png
+674833433 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_137_depthcrop.png
+674858448 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_143_depthcrop.png
+739421556 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_136_depthcrop.png
+740728276 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_12_depthcrop.png
+740728788 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_10_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_11_depthcrop.png
+741010772 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_105_depthcrop.png
+741010900 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_106_depthcrop.png
+741502324 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_135_depthcrop.png
+741911892 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_137_depthcrop.png
+742043090 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_134_depthcrop.png
+742043092 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_118_depthcrop.png
+742043478 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_119_depthcrop.png
+742043606 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_123_depthcrop.png
+742059348 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_117_depthcrop.png
+742059476 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_116_depthcrop.png
+742059990 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_124_depthcrop.png
+742064084 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_101_depthcrop.png
+742305244 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_133_depthcrop.png
+742322132 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_120_depthcrop.png
+745188692 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_110_depthcrop.png
+746253652 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_114_depthcrop.png
+746254292 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_122_depthcrop.png
+746307542 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_12_depthcrop.png
+749400020 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_102_depthcrop.png
+750448084 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_109_depthcrop.png
+757792212 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_125_depthcrop.png
+760999413 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_133_depthcrop.png
+763100661 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_135_depthcrop.png
+765001044 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_117_depthcrop.png
+766180820 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_124_depthcrop.png
+766684500 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_114_depthcrop.png
+767229396 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_123_depthcrop.png
+767294941 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_110_depthcrop.png
+768304628 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_134_depthcrop.png
+770374132 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_126_depthcrop.png
+770375156 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_115_depthcrop.png
+771485181 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_105_depthcrop.png
+771489277 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_106_depthcrop.png
+772992340 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_138_depthcrop.png
+775470556 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_131_depthcrop.png
+800316794 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_10_depthcrop.png
+800841083 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_11_depthcrop.png
+875478996 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\banana\banana_1\banana_1_1_13_depthcrop.png
+905092822 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_101_depthcrop.png
+913678063 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_145_depthcrop.png
+1010351442 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_132_depthcrop.png
+1010479062 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_133_depthcrop.png
+1010544598 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_128_depthcrop.png
+1010544607 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_132_depthcrop.png
+1010741206 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_145_depthcrop.png
+1013690187 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_13_depthcrop.png
+1014673364 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_134_depthcrop.png
+1014673366 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_131_depthcrop.png
+1014689750 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_127_depthcrop.png
+1014738774 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_11_depthcrop.png
+1014742854 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_13_depthcrop.png
+1014935508 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_141_depthcrop.png
+1030917846 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_100_depthcrop.png
+1035709941 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_102_depthcrop.png
+1039908093 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_100_depthcrop.png
+1039908341 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_103_depthcrop.png
+1039924725 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_119_depthcrop.png
+1039924733 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_108_depthcrop.png
+1040121844 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_124_depthcrop.png
+1044049878 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_125_depthcrop.png
+1044099030 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_144_depthcrop.png
+1044295622 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_142_depthcrop.png
+1044295636 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_138_depthcrop.png
+1044295638 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_143_depthcrop.png
+1046458248 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_121_depthcrop.png
+1046458264 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_122_depthcrop.png
+1046458272 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_120_depthcrop.png
+1048227798 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_140_depthcrop.png
+1048293334 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_10_depthcrop.png
+1048489942 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_139_depthcrop.png
+1142041684 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_142_depthcrop.png
+1142058452 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_141_depthcrop.png
+1143613652 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_143_depthcrop.png
+1166304416 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_118_depthcrop.png
+1172757732 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_102_depthcrop.png
+1202519229 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_122_depthcrop.png
+1202580661 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_121_depthcrop.png
+1233610116 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_115_depthcrop.png
+1276800996 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_144_depthcrop.png
+1283682384 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_101_depthcrop.png
+1301112192 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_119_depthcrop.png
+1303047644 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_137_depthcrop.png
+1303113177 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_138_depthcrop.png
+1303117785 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_139_depthcrop.png
+1304394107 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_143_depthcrop.png
+1307312117 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_123_depthcrop.png
+1308359669 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_120_depthcrop.png
+1328409749 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_120_depthcrop.png
+1342177015 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_139_depthcrop.png
+1441093163 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_115_depthcrop.png
+1472550571 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_117_depthcrop.png
+1485272784 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_105_depthcrop.png
+1550757732 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_145_depthcrop.png
+1567357941 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_121_depthcrop.png
+1600896894 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_10_depthcrop.png
+1703765632 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_117_depthcrop.png
+1800369110 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_135_depthcrop.png
+1815277012 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_139_depthcrop.png
+1820258132 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_121_depthcrop.png
+1820262390 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_144_depthcrop.png
+1841297915 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_142_depthcrop.png
+1841299449 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_141_depthcrop.png
+1852766198 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_138_depthcrop.png
+1853878263 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_140_depthcrop.png
+1862270838 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_131_depthcrop.png
+1878982646 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_143_depthcrop.png
+1879048020 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_136_depthcrop.png
+2083696084 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_140_depthcrop.png
+2084483030 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_137_depthcrop.png
+2086481906 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_110_depthcrop.png
+2086514610 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_114_depthcrop.png
+2086514682 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_113_depthcrop.png
+2086645690 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_115_depthcrop.png
+2088677332 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\dry_battery\dry_battery_1\dry_battery_1_1_136_depthcrop.png
+2095034282 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_116_depthcrop.png
+2105524221 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_145_depthcrop.png
+2109472253 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_122_depthcrop.png
+2113601012 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_125_depthcrop.png
+2113863670 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_130_depthcrop.png
+2113863671 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_127_depthcrop.png
+2113929207 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_128_depthcrop.png
+2118123519 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_107_depthcrop.png
+2120200178 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_112_depthcrop.png
+2126512127 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_110_depthcrop.png
+2128555938 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_109_depthcrop.png
+2130706431 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_133_depthcrop.png
+2138030039 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_137_depthcrop.png
+2138046455 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_141_depthcrop.png
+2147483615 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_134_depthcrop.png
+2150280649 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_105_depthcrop.png
+2183835081 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_108_depthcrop.png
+2241972239 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_10_depthcrop.png
+2250829276 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_145_depthcrop.png
+2250941897 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_104_depthcrop.png
+2250942921 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_113_depthcrop.png
+2250943945 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_110_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_112_depthcrop.png
+2250960028 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_144_depthcrop.png
+2267720137 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_115_depthcrop.png
+2284389648 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_140_depthcrop.png
+2284397840 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_139_depthcrop.png
+2284413305 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_123_depthcrop.png
+2284413433 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_121_depthcrop.png
+2285380633 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_138_depthcrop.png
+2285461993 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_124_depthcrop.png
+2285593081 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_125_depthcrop.png
+2288607609 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_119_depthcrop.png
+2299247093 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_140_depthcrop.png
+2303357428 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_130_depthcrop.png
+2303406581 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_137_depthcrop.png
+2304471541 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_138_depthcrop.png
+2311811572 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_131_depthcrop.png
+2315548041 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_111_depthcrop.png
+2316203401 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_110_depthcrop.png
+2318099867 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_105_depthcrop.png
+2318235017 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_109_depthcrop.png
+2318362009 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_107_depthcrop.png
+2318366153 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_108_depthcrop.png
+2318999931 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_126_depthcrop.png
+2334876827 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_101_depthcrop.png
+2335171979 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_104_depthcrop.png
+2351673341 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_13_depthcrop.png
+2369765239 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_11_depthcrop.png
+2642132853 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_12_depthcrop.png
+2688034065 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_136_depthcrop.png
+2688099609 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_135_depthcrop.png
+2717339689 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_100_depthcrop.png
+2784090153 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_109_depthcrop.png
+2784219241 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_10_depthcrop.png
+2784221225 8
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_12_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_13_depthcrop.png
+2784221241 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_118_depthcrop.png
+2784448553 8
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_105_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_108_depthcrop.png
+2784483369 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_110_depthcrop.png
+2822515193 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_128_depthcrop.png
+2848596468 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_136_depthcrop.png
+2848678388 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_132_depthcrop.png
+2855871769 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_134_depthcrop.png
+2855873817 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_133_depthcrop.png
+2856102395 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_127_depthcrop.png
+2889361913 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_129_depthcrop.png
+2922982681 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_132_depthcrop.png
+2983555883 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_13_depthcrop.png
+2985546425 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_138_depthcrop.png
+2985547945 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_141_depthcrop.png
+2985548477 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_137_depthcrop.png
+3019362491 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_134_depthcrop.png
+3019373247 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_136_depthcrop.png
+3034699279 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_11_depthcrop.png
+3052787833 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_120_depthcrop.png
+3052795945 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_121_depthcrop.png
+3052918841 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_119_depthcrop.png
+3061156847 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_144_depthcrop.png
+3061287791 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_143_depthcrop.png
+3078065919 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_142_depthcrop.png
+3091833102 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_13_depthcrop.png
+3093143822 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_12_depthcrop.png
+3117773611 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_10_depthcrop.png
+3119765737 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_143_depthcrop.png
+3119765741 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_142_depthcrop.png
+3119766201 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_139_depthcrop.png
+3126665486 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_11_depthcrop.png
+3126666159 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_10_depthcrop.png
+3151328043 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_11_depthcrop.png
+3153580139 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_129_depthcrop.png
+3153582719 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_133_depthcrop.png
+3153582779 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_135_depthcrop.png
+3153588335 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_130_depthcrop.png
+3153590379 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_131_depthcrop.png
+3162222431 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_11_depthcrop.png
+3169496919 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_10_depthcrop.png
+3186874601 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_144_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_145_depthcrop.png
+3189353752 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_128_depthcrop.png
+3190893849 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_131_depthcrop.png
+3190926617 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_129_depthcrop.png
+3193548040 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_127_depthcrop.png
+3193679128 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_126_depthcrop.png
+3193679176 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_125_depthcrop.png
+3193941920 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_119_depthcrop.png
+3202067800 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_124_depthcrop.png
+3202067864 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_123_depthcrop.png
+3278303499 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_13_depthcrop.png
+3278786923 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_12_depthcrop.png
+3284418601 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_144_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_145_depthcrop.png
+3284488747 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_143_depthcrop.png
+3284496427 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_144_depthcrop.png
+3285012651 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_140_depthcrop.png
+3286515753 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_141_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_143_depthcrop.png
+3286581289 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_142_depthcrop.png
+3287109675 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_141_depthcrop.png
+3299204621 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_12_depthcrop.png
+3308232350 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_12_depthcrop.png
+3341455245 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_127_depthcrop.png
+3341455309 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_125_depthcrop.png
+3341461961 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_117_depthcrop.png
+3341462985 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_118_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_119_depthcrop.png
+3341463497 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_120_depthcrop.png
+3341463501 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_123_depthcrop.png
+3341786842 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_11_depthcrop.png
+3341803162 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_10_depthcrop.png
+3347898046 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_125_depthcrop.png
+3350003386 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_124_depthcrop.png
+3350003388 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_123_depthcrop.png
+3354222115 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_100_depthcrop.png
+3356226041 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_141_depthcrop.png
+3358138745 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_118_depthcrop.png
+3358269945 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_116_depthcrop.png
+3362284089 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_112_depthcrop.png
+3362349417 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_117_depthcrop.png
+3364446829 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_109_depthcrop.png
+3372933620 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_139_depthcrop.png
+3374998333 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_111_depthcrop.png
+3381359149 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_110_depthcrop.png
+3384800249 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_144_depthcrop.png
+3385418553 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_113_depthcrop.png
+3387515257 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_114_depthcrop.png
+3387646329 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_115_depthcrop.png
+3408610715 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_106_depthcrop.png
+3408618907 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_103_depthcrop.png
+3408618911 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_102_depthcrop.png
+3408619163 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_100_depthcrop.png
+3414442599 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_102_depthcrop.png
+3414970479 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_103_depthcrop.png
+3416257531 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_144_depthcrop.png
+3417291771 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_145_depthcrop.png
+3418640967 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_101_depthcrop.png
+3434086399 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_128_depthcrop.png
+3451907583 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_143_depthcrop.png
+3475673037 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_128_depthcrop.png
+3475673053 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_131_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_132_depthcrop.png
+3475680669 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_134_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_137_depthcrop.png
+3475680732 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_139_depthcrop.png
+3475680733 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_136_depthcrop.png
+3475684572 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_141_depthcrop.png
+3475684764 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_140_depthcrop.png
+3475684829 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_138_depthcrop.png
+3475696796 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_143_depthcrop.png
+3475696860 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_142_depthcrop.png
+3475738573 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_130_depthcrop.png
+3485462015 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_144_depthcrop.png
+3543121566 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_131_depthcrop.png
+3552858667 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_132_depthcrop.png
+3552858735 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_100_depthcrop.png
+3552866859 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_133_depthcrop.png
+3552907819 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_142_depthcrop.png
+3552916011 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_137_depthcrop.png
+3552919595 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_145_depthcrop.png
+3552923689 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_139_depthcrop.png
+3552924335 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_105_depthcrop.png
+3553056363 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_124_depthcrop.png
+3553443979 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_142_depthcrop.png
+3553444011 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_112_depthcrop.png
+3553445547 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_138_depthcrop.png
+3553446059 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_116_depthcrop.png
+3553448075 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_139_depthcrop.png
+3553448107 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_137_depthcrop.png
+3553448491 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_135_depthcrop.png
+3553448619 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_136_depthcrop.png
+3553907241 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_137_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_138_depthcrop.png
+3553907243 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_131_depthcrop.png
+3554095659 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_138_depthcrop.png
+3555021487 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_106_depthcrop.png
+3582287403 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_109_depthcrop.png
+3584384555 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_110_depthcrop.png
+3586479659 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_114_depthcrop.png
+3614940143 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_137_depthcrop.png
+3615841803 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_107_depthcrop.png
+3615841835 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_108_depthcrop.png
+3616364043 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_106_depthcrop.png
+3616366083 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_105_depthcrop.png
+3618545342 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_128_depthcrop.png
+3618561726 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_127_depthcrop.png
+3618619038 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_129_depthcrop.png
+3620024875 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_139_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_141_depthcrop.png
+3620033199 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_10_depthcrop.png
+3620034091 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_116_depthcrop.png
+3620034219 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_118_depthcrop.png
+3620035247 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_123_depthcrop.png
+3620558379 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_101_depthcrop.png
+3620560419 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_104_depthcrop.png
+3620560427 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_102_depthcrop.png
+3621073451 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_140_depthcrop.png
+3621082795 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_100_depthcrop.png
+3621090987 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_103_depthcrop.png
+3622130351 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_108_depthcrop.png
+3632493301 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_106_depthcrop.png
+3632755321 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_108_depthcrop.png
+3636744812 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_106_depthcrop.png
+3645897209 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_143_depthcrop.png
+3649065061 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_104_depthcrop.png
+3653915245 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_107_depthcrop.png
+3670298733 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_105_depthcrop.png
+3670700653 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_108_depthcrop.png
+3756842666 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_10_depthcrop.png
+3807367467 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_11_depthcrop.png
+3816800553 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\binder\binder_1\binder_1_1_10_depthcrop.png
+3825030699 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_144_depthcrop.png
+3878395614 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_13_depthcrop.png
+3890042411 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_143_depthcrop.png
+3904857471 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_138_depthcrop.png
+3904890879 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_136_depthcrop.png
+3910132217 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\comb\comb_1\comb_1_1_142_depthcrop.png
+3953095547 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\flashlight\flashlight_1\flashlight_1_1_145_depthcrop.png
+3971999103 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_137_depthcrop.png
+3972000239 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_134_depthcrop.png
+3972005759 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_131_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_133_depthcrop.png
+3972005887 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_129_depthcrop.png
+3988778495 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_141_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_145_depthcrop.png
+4005560319 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_127_depthcrop.png
+4022330879 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_139_depthcrop.png
+4022332927 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_142_depthcrop.png
+4040233915 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\calculator\calculator_1\calculator_1_1_13_depthcrop.png
+4056240683 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_129_depthcrop.png
+4056240811 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_134_depthcrop.png
+4057166073 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_113_depthcrop.png
+4057166329 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_116_depthcrop.png
+4057428985 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_117_depthcrop.png
+4059522043 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_120_depthcrop.png
+4059526129 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_118_depthcrop.png
+4067928943 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_135_depthcrop.png
+4076338047 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_132_depthcrop.png
+4079992479 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_133_depthcrop.png
+4080516767 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_134_depthcrop.png
+4081039327 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_135_depthcrop.png
+4089737771 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_134_depthcrop.png
+4089794603 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_130_depthcrop.png
+4089796203 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_123_depthcrop.png
+4090314923 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_124_depthcrop.png
+4090318891 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_126_depthcrop.png
+4090319403 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_145_depthcrop.png
+4090319915 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_131_depthcrop.png
+4090320427 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_132_depthcrop.png
+4090778155 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_136_depthcrop.png
+4090786347 6
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_129_depthcrop.png
+4090819179 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_123_depthcrop.png
+4090821179 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cereal_box\cereal_box_1\cereal_box_1_1_122_depthcrop.png
+4090835499 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_131_depthcrop.png
+4090839083 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_123_depthcrop.png
+4090839211 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_119_depthcrop.png
+4090843183 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_114_depthcrop.png
+4090843691 11
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_119_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_125_depthcrop.png
+4090843695 29
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_103_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_10_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_110_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_12_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_131_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_134_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_137_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_138_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_139_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_141_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_142_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_143_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_144_depthcrop.png
+4090843711 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_121_depthcrop.png
+4090843755 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_145_depthcrop.png
+4090843759 9
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_105_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_13_depthcrop.png
+4090843775 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_136_depthcrop.png
+4090843819 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_126_depthcrop.png
+4090843823 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_101_depthcrop.png
+4090843887 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_119_depthcrop.png
+4090843951 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_11_depthcrop.png
+4090847403 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_122_depthcrop.png
+4090851371 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_121_depthcrop.png
+4090851883 7
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_110_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_136_depthcrop.png
+4090851947 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_103_depthcrop.png
+4090851963 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_127_depthcrop.png
+4090852011 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_109_depthcrop.png
+4090966571 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_135_depthcrop.png
+4090974763 6
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_118_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_124_depthcrop.png
+4090974827 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_142_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_143_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_144_depthcrop.png
+4090974843 5
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_138_depthcrop.png
+4090982955 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_10_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_127_depthcrop.png
+4090983019 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_12_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_137_depthcrop.png
+4090983035 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_129_depthcrop.png
+4090983291 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_119_depthcrop.png
+4091367595 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_113_depthcrop.png
+4091368107 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_111_depthcrop.png
+4091372587 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_125_depthcrop.png
+4091376299 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_110_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_114_depthcrop.png
+4092940843 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_105_depthcrop.png
+4092940847 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_104_depthcrop.png
+4092949035 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_107_depthcrop.png
+4093064059 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_125_depthcrop.png
+4093071995 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_119_depthcrop.png
+4093076219 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_122_depthcrop.png
+4093080187 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_118_depthcrop.png
+4093080427 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_126_depthcrop.png
+4093080443 5
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_124_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_129_depthcrop.png
+4093080571 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_121_depthcrop.png
+4093113195 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_130_depthcrop.png
+4124399147 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_111_depthcrop.png
+4134906479 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_141_depthcrop.png
+4135029743 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_138_depthcrop.png
+4135030639 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_140_depthcrop.png
+4135033711 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_139_depthcrop.png
+4135037807 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_134_depthcrop.png
+4135563887 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_131_depthcrop.png
+4147290079 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_139_depthcrop.png
+4147361695 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_136_depthcrop.png
+4147757023 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_145_depthcrop.png
+4147812319 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_138_depthcrop.png
+4147814367 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_141_depthcrop.png
+4147879903 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_142_depthcrop.png
+4147888095 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_144_depthcrop.png
+4148010975 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_143_depthcrop.png
+4151810671 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_136_depthcrop.png
+4156903979 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_124_depthcrop.png
+4156903983 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_121_depthcrop.png
+4156905131 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_119_depthcrop.png
+4156905195 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_143_depthcrop.png
+4156906027 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_127_depthcrop.png
+4156907179 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_142_depthcrop.png
+4156913323 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_120_depthcrop.png
+4157944363 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_13_depthcrop.png
+4157948075 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_106_depthcrop.png
+4157952255 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_cup\food_cup_1\food_cup_1_1_118_depthcrop.png
+4157952555 12
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_118_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_135_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_121_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_122_depthcrop.png
+4157952559 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_13_depthcrop.png
+4157952619 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_131_depthcrop.png
+4157952623 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_120_depthcrop.png
+4157952683 8
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_144_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_145_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_107_depthcrop.png
+4157952687 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_12_depthcrop.png
+4157953579 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_105_depthcrop.png
+4157954603 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_133_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_134_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_136_depthcrop.png
+4157954731 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_137_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_139_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_140_depthcrop.png
+4157955755 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_138_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_101_depthcrop.png
+4157960747 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_134_depthcrop.png
+4157960811 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_110_depthcrop.png
+4157960827 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_124_depthcrop.png
+4157961067 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_101_depthcrop.png
+4157962923 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_104_depthcrop.png
+4158075435 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_12_depthcrop.png
+4158083691 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_139_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_140_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_141_depthcrop.png
+4158083707 7
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_105_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_112_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_132_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_134_depthcrop.png
+4158086827 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_141_depthcrop.png
+4158091819 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_128_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_129_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_130_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_box\food_box_1\food_box_1_1_133_depthcrop.png
+4158091883 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_107_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_109_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_13_depthcrop.png
+4158091899 7
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_131_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_133_depthcrop.png
+4158093947 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_136_depthcrop.png
+4158116475 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_145_depthcrop.png
+4158474411 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_115_depthcrop.png
+4158478507 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_118_depthcrop.png
+4158485131 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_117_depthcrop.png
+4160049707 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_119_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_128_depthcrop.png
+4160049787 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_121_depthcrop.png
+4160049839 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\apple\apple_1\apple_1_1_110_depthcrop.png
+4160189035 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_10_depthcrop.png
+4160189051 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_122_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_can\food_can_1\food_can_1_1_125_depthcrop.png
+4170674800 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_107_depthcrop.png
+4187452409 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_115_depthcrop.png
+4191384284 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_109_depthcrop.png
+4191384305 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_112_depthcrop.png
+4191384312 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_110_depthcrop.png
+4191384313 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_111_depthcrop.png
+4191384569 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_114_depthcrop.png
+4191508011 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_10_depthcrop.png
+4191510187 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_11_depthcrop.png
+4225069995 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\camera\camera_1\camera_1_1_12_depthcrop.png
+4227289707 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_125_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_126_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_127_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_128_depthcrop.png
+4240402303 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_132_depthcrop.png
+4240437119 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_135_depthcrop.png
+4240441343 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_118_depthcrop.png
+4242386930 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_111_depthcrop.png
+4258616891 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_13_depthcrop.png
+4261084153 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_126_depthcrop.png
+4265607167 5
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_100_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_102_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_106_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_109_depthcrop.png
+4267519978 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_108_depthcrop.png
+4267651050 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_107_depthcrop.png
+4267683744 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_118_depthcrop.png
+4267683810 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_117_depthcrop.png
+4273994751 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_119_depthcrop.png
+4273995759 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_122_depthcrop.png
+4273995775 10
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_105_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_108_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_113_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_114_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_115_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_116_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_117_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_120_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_123_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_124_depthcrop.png
+4275912683 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_101_depthcrop.png
+4276039658 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_106_depthcrop.png
+4276072426 2
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_104_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_105_depthcrop.png
+4276072427 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_103_depthcrop.png
+4276076522 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_102_depthcrop.png
+4281581463 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\food_bag\food_bag_1\food_bag_1_1_137_depthcrop.png
+4281860095 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_103_depthcrop.png
+4286562295 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cell_phone\cell_phone_1\cell_phone_1_1_142_depthcrop.png
+4290772991 3
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_101_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_111_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_112_depthcrop.png
+4291122731 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_122_depthcrop.png
+4291122795 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_121_depthcrop.png
+4292171499 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\coffee_mug\coffee_mug_1\coffee_mug_1_1_12_depthcrop.png
+4293254315 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_11_depthcrop.png
+4293778827 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_13_depthcrop.png
+4293778863 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\bell_pepper\bell_pepper_1\bell_pepper_1_1_12_depthcrop.png
+4294918123 1
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\cap\cap_1\cap_1_1_100_depthcrop.png
+4294967295 4
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_10_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_11_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_12_depthcrop.png
+E:\Datasets\RGBD_Dataset\UW\rgbd-dataset\ball\ball_1\ball_1_1_13_depthcrop.png

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15A3B531-D69E-4A4B-B882-17803A9B8935}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SmartWindows</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\opencv245\opencv\build\include;C:\Program Files\Microsoft SDKs\Kinect\v1.8\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\opencv245\opencv\build\x86\vc11\lib;C:\Program Files\Microsoft SDKs\Kinect\v1.8\lib\x86;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\opencv245\opencv\build\include;C:\Program Files\Microsoft SDKs\Kinect\v1.8\inc;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\opencv245\opencv\build\x86\vc11\lib;C:\Program Files\Microsoft SDKs\Kinect\v1.8\lib\x86;C:\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\opencv245\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\opencv245\opencv\build\x64\vc11\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\opencv245\opencv\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\opencv245\opencv\build\x64\vc11\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_core245d.lib;opencv_highgui245d.lib;opencv_imgproc245d.lib;kinect10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opencv_core245.lib;opencv_highgui245.lib;opencv_imgproc245.lib;Kinect10.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>opencv_core245.lib;opencv_highgui245.lib;opencv_imgproc245.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>opencv_core245d.lib;opencv_highgui245d.lib;opencv_imgproc245d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="a9wins\A9Window.h" />
+    <ClInclude Include="a9wins\DisjointSet.h" />
+    <ClInclude Include="a9wins\Rectangle.h" />
+    <ClInclude Include="a9wins\SmartWindowing.h" />
+    <ClInclude Include="Bing\CmFile.h" />
+    <ClInclude Include="Bing\CmShow.h" />
+    <ClInclude Include="Bing\CmTimer.h" />
+    <ClInclude Include="Bing\DataSetVOC.h" />
+    <ClInclude Include="Bing\FilterTIG.h" />
+    <ClInclude Include="Bing\ImgContrastBB.h" />
+    <ClInclude Include="Bing\Objectness.h" />
+    <ClInclude Include="Bing\common_bing.h" />
+    <ClInclude Include="Bing\ValStructVec.h" />
+    <ClInclude Include="ColorGMM.h" />
+    <ClInclude Include="DataManager\Berkeley3DDataManager.h" />
+    <ClInclude Include="DataManager\DataManagerInterface.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="DataManager\DatasetManager.h" />
+    <ClInclude Include="DataManager\NYUDepth2DataMan.h" />
+    <ClInclude Include="DataManager\VOCDataManager.h" />
+    <ClInclude Include="Dijkstra.hpp" />
+    <ClInclude Include="FixationSegmentor.h" />
+    <ClInclude Include="gcgraph.hpp" />
+    <ClInclude Include="GrabCutter.h" />
+    <ClInclude Include="ImageSegmentor.h" />
+    <ClInclude Include="ImgVisualizer.h" />
+    <ClInclude Include="GenericObjectDetector.h" />
+    <ClInclude Include="Kinect\KinectDataMan.h" />
+    <ClInclude Include="Kinect\KinectHelper.h" />
+    <ClInclude Include="Kinect\OpenCVFrameHelper.h" />
+    <ClInclude Include="LibLinear\blas\blas.h" />
+    <ClInclude Include="LibLinear\blas\blasp.h" />
+    <ClInclude Include="LibLinear\linear.h" />
+    <ClInclude Include="LibLinear\tron.h" />
+    <ClInclude Include="ObjectSegmentor.h" />
+    <ClInclude Include="ObjectTester.h" />
+    <ClInclude Include="RGBDTools.h" />
+    <ClInclude Include="Saliency\Composition\colorconverthelper.h" />
+    <ClInclude Include="Saliency\Composition\functional_ex.h" />
+    <ClInclude Include="Saliency\Composition\ImageSimple.h" />
+    <ClInclude Include="Saliency\Composition\IntegralImage.h" />
+    <ClInclude Include="Saliency\Composition\nms.h" />
+    <ClInclude Include="Saliency\Composition\SalientRGBDRegionDetector.h" />
+    <ClInclude Include="Saliency\Composition\SalientRegionDetector.h" />
+    <ClInclude Include="Saliency\Composition\SegmentBasedWindowComposer.h" />
+    <ClInclude Include="Saliency\Depth\DepthSaliency.h" />
+    <ClInclude Include="SegmentProposal.h" />
+    <ClInclude Include="ShapeAnalyzer.h" />
+    <ClInclude Include="Tester.h" />
+    <ClInclude Include="Tools.h" />
+    <ClInclude Include="ViewSearcher.h" />
+    <ClInclude Include="WindowEvaluator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="a9wins\A9Window.cpp" />
+    <ClCompile Include="a9wins\Rectangle.cpp" />
+    <ClCompile Include="a9wins\SmartWindowing.cpp" />
+    <ClCompile Include="Bing\CmFile.cpp" />
+    <ClCompile Include="Bing\CmShow.cpp" />
+    <ClCompile Include="Bing\DataSetVOC.cpp" />
+    <ClCompile Include="Bing\FilterTIG.cpp" />
+    <ClCompile Include="Bing\Objectness.cpp" />
+    <ClCompile Include="Bing\common_bing.cpp" />
+    <ClCompile Include="ColorGMM.cpp" />
+    <ClCompile Include="DataManager\Berkeley3DDataManager.cpp" />
+    <ClCompile Include="DataManager\DatasetManager.cpp" />
+    <ClCompile Include="DataManager\NYUDepth2DataMan.cpp" />
+    <ClCompile Include="DataManager\VOCDataManager.cpp" />
+    <ClCompile Include="FixationSegmentor.cpp" />
+    <ClCompile Include="GrabCutter.cpp" />
+    <ClCompile Include="ImageSegmentor.cpp" />
+    <ClCompile Include="ImgVisualizer.cpp" />
+    <ClCompile Include="Kinect\KinectDataMan.cpp" />
+    <ClCompile Include="Kinect\OpenCVFrameHelper.cpp" />
+    <ClCompile Include="LibLinear\blas\daxpy.c" />
+    <ClCompile Include="LibLinear\blas\ddot.c" />
+    <ClCompile Include="LibLinear\blas\dnrm2.c" />
+    <ClCompile Include="LibLinear\blas\dscal.c" />
+    <ClCompile Include="LibLinear\linear.cpp" />
+    <ClCompile Include="LibLinear\tron.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GenericObjectDetector.cpp" />
+    <ClCompile Include="ObjectSegmentor.cpp" />
+    <ClCompile Include="ObjectTester.cpp" />
+    <ClCompile Include="RGBDTools.cpp" />
+    <ClCompile Include="Saliency\Composition\IntegralImage.cpp" />
+    <ClCompile Include="Saliency\Composition\SalientRGBDRegionDetector.cpp" />
+    <ClCompile Include="Saliency\Composition\SalientRegionDetector.cpp" />
+    <ClCompile Include="Saliency\Composition\SegmentBasedWindowComposer.cpp" />
+    <ClCompile Include="Saliency\Depth\DepthSaliency.cpp" />
+    <ClCompile Include="SegmentProposal.cpp" />
+    <ClCompile Include="ShapeAnalyzer.cpp" />
+    <ClCompile Include="Tester.cpp" />
+    <ClCompile Include="Tools.cpp" />
+    <ClCompile Include="ViewSearcher.cpp" />
+    <ClCompile Include="WindowEvaluator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LibLinear\README.1.93.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

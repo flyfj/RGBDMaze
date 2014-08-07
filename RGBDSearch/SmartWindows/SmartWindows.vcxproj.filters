@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="a9wins">
+      <UniqueIdentifier>{1e4ef555-1f22-4180-be33-7f226214aea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bing">
+      <UniqueIdentifier>{ba5cdf68-ab45-4d10-9219-55f40a2f32af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LibLinear">
+      <UniqueIdentifier>{803743b8-fd29-4e2e-9e9b-bc450a2705a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LibLinear\Blas">
+      <UniqueIdentifier>{b5fa4652-8ce8-4491-97f5-7632dadd3027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Saliency">
+      <UniqueIdentifier>{8c37075f-1364-44c5-8f8b-a3e56dd469fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Saliency\Composition">
+      <UniqueIdentifier>{5d10ae1f-3f53-45a8-baf7-c17cb85aa046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Saliency\Depth">
+      <UniqueIdentifier>{ab3291f1-83d1-4640-95ab-08610063a0d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kinect">
+      <UniqueIdentifier>{9e313ae4-90c2-40bd-a0d5-413e92b0d73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataManager">
+      <UniqueIdentifier>{0a009577-af64-4503-9705-f0d36b751dc6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="a9wins\DisjointSet.h">
+      <Filter>a9wins</Filter>
+    </ClInclude>
+    <ClInclude Include="a9wins\Rectangle.h">
+      <Filter>a9wins</Filter>
+    </ClInclude>
+    <ClInclude Include="a9wins\SmartWindowing.h">
+      <Filter>a9wins</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgVisualizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericObjectDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\DataManagerInterface.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\Berkeley3DDataManager.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\VOCDataManager.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\DatasetManager.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GrabCutter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSegmentor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSegmentor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBDTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorGMM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcgraph.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="a9wins\A9Window.h">
+      <Filter>a9wins</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowEvaluator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\Objectness.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\DataSetVOC.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\FilterTIG.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\ValStructVec.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\CmFile.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\CmShow.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\CmTimer.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\ImgContrastBB.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="LibLinear\linear.h">
+      <Filter>LibLinear</Filter>
+    </ClInclude>
+    <ClInclude Include="LibLinear\tron.h">
+      <Filter>LibLinear</Filter>
+    </ClInclude>
+    <ClInclude Include="LibLinear\blas\blas.h">
+      <Filter>LibLinear\Blas</Filter>
+    </ClInclude>
+    <ClInclude Include="LibLinear\blas\blasp.h">
+      <Filter>LibLinear\Blas</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\SalientRegionDetector.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\SegmentBasedWindowComposer.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\IntegralImage.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\ImageSimple.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\functional_ex.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\colorconverthelper.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\nms.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager\NYUDepth2DataMan.h">
+      <Filter>DataManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bing\common_bing.h">
+      <Filter>Bing</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Depth\DepthSaliency.h">
+      <Filter>Saliency\Depth</Filter>
+    </ClInclude>
+    <ClInclude Include="Kinect\KinectDataMan.h">
+      <Filter>Kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="Kinect\KinectHelper.h">
+      <Filter>Kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="Kinect\OpenCVFrameHelper.h">
+      <Filter>Kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Composition\SalientRGBDRegionDetector.h">
+      <Filter>Saliency\Composition</Filter>
+    </ClInclude>
+    <ClInclude Include="Dijkstra.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FixationSegmentor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewSearcher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SegmentProposal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="a9wins\Rectangle.cpp">
+      <Filter>a9wins</Filter>
+    </ClCompile>
+    <ClCompile Include="a9wins\SmartWindowing.cpp">
+      <Filter>a9wins</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgVisualizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericObjectDetector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeAnalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager\Berkeley3DDataManager.cpp">
+      <Filter>DataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager\VOCDataManager.cpp">
+      <Filter>DataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager\DatasetManager.cpp">
+      <Filter>DataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GrabCutter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSegmentor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectSegmentor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBDTools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorGMM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="a9wins\A9Window.cpp">
+      <Filter>a9wins</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowEvaluator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\Objectness.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\DataSetVOC.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\FilterTIG.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\CmFile.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\CmShow.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\linear.cpp">
+      <Filter>LibLinear</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\tron.cpp">
+      <Filter>LibLinear</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\blas\daxpy.c">
+      <Filter>LibLinear\Blas</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\blas\ddot.c">
+      <Filter>LibLinear\Blas</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\blas\dnrm2.c">
+      <Filter>LibLinear\Blas</Filter>
+    </ClCompile>
+    <ClCompile Include="LibLinear\blas\dscal.c">
+      <Filter>LibLinear\Blas</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Composition\SalientRegionDetector.cpp">
+      <Filter>Saliency\Composition</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Composition\SegmentBasedWindowComposer.cpp">
+      <Filter>Saliency\Composition</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Composition\IntegralImage.cpp">
+      <Filter>Saliency\Composition</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager\NYUDepth2DataMan.cpp">
+      <Filter>DataManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bing\common_bing.cpp">
+      <Filter>Bing</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Depth\DepthSaliency.cpp">
+      <Filter>Saliency\Depth</Filter>
+    </ClCompile>
+    <ClCompile Include="Kinect\KinectDataMan.cpp">
+      <Filter>Kinect</Filter>
+    </ClCompile>
+    <ClCompile Include="Kinect\OpenCVFrameHelper.cpp">
+      <Filter>Kinect</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Composition\SalientRGBDRegionDetector.cpp">
+      <Filter>Saliency\Composition</Filter>
+    </ClCompile>
+    <ClCompile Include="Tester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FixationSegmentor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewSearcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SegmentProposal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LibLinear\README.1.93.txt">
+      <Filter>LibLinear</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
