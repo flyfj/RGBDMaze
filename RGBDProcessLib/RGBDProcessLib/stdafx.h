@@ -9,6 +9,6 @@
 #include <stdio.h>
 #include <tchar.h>
 
-
-
 // TODO: reference additional headers your program requires here
+#include <opencv2/opencv.hpp>
+using namespace cv;
