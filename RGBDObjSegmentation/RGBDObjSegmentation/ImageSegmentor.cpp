@@ -24,18 +24,23 @@ namespace visualsearch
 		rgb val;
 		for(int y=0; y<height; y++)
 		{
+			const uchar* row_pt = img.ptr(y);
 			for(int x=0; x<width; x++)
 			{
-				val.b = img.at<cv::Vec3b>(y, x).val[0];
-				val.g = img.at<cv::Vec3b>(y, x).val[1];
-				val.r = img.at<cv::Vec3b>(y, x).val[2];
+				val.b = *row_pt++; //img.at<cv::Vec3b>(y, x).val[0];
+				val.g = *row_pt++; //img.at<cv::Vec3b>(y, x).val[1];
+				val.r = *row_pt++; //img.at<cv::Vec3b>(y, x).val[2];
 				input.access[y][x] = val;
 			}
 		}
 
+		double start_t = cv::getTickCount();
+		
 		image<int> index(width, height);	//index matrix, each pixel value is its object id (0~object_num)
 		int num_ccs;
 		image<rgb> *seg = segment_image(&input, m_dSmoothSigma, m_dThresholdK, m_dMinArea, &num_ccs, &index);	
+		
+		cout<<"Segmentation time: "<<(getTickCount()-start_t) / getTickFrequency()<<"s."<<endl;
 
 		// set up segment color image for visualization
 		m_segImg.create(img.size(), CV_8UC3);
@@ -89,7 +94,7 @@ namespace visualsearch
 		}
 
 		// compute mean image
-		cv::Mat mean_img = img.clone();
+		m_mean_img = img.clone();
 		double maxval, minval;
 		cv::minMaxLoc(m_idxImg, &minval, &maxval);
 		for(int i=minval; i<=maxval; i++)
@@ -97,11 +102,11 @@ namespace visualsearch
 			cv::Mat cur_mask;
 			cv::compare(m_idxImg, cv::Scalar(i), cur_mask, cv::CMP_EQ);
 			cv::Scalar cur_mean = cv::mean(img, cur_mask);
-			mean_img.setTo(cur_mean, cur_mask);
+			superPixels[i].meancolor = cur_mean;
+			m_mean_img.setTo(cur_mean, cur_mask);
 		}
 
 		return num_ccs;
-
 	}
 
 	bool ImageSegmentor::ComputeAdjacencyMat(const std::vector<SuperPixel>& sps, cv::Mat& adjacencyMat)
@@ -141,25 +146,37 @@ namespace visualsearch
 				{
 					int top_sp_id = idx_map.at<int>(r-1, c);
 					if(cur_sp_id != top_sp_id)
+					{
+						//cout<<cur_sp_id<<" "<<top_sp_id<<endl;
 						adjacencyMat.at<uchar>(cur_sp_id, top_sp_id) = adjacencyMat.at<uchar>(top_sp_id, cur_sp_id) = 1;
+					}
 				}
-				if(r<idx_map.rows)
+				if(r<idx_map.rows-1)
 				{
 					int bottom_sp_id = idx_map.at<int>(r+1, c);
 					if(cur_sp_id != bottom_sp_id)
+					{
+						//cout<<cur_sp_id<<" "<<bottom_sp_id<<endl;
 						adjacencyMat.at<uchar>(cur_sp_id, bottom_sp_id) = adjacencyMat.at<uchar>(bottom_sp_id, cur_sp_id) = 1;
+					}
 				}
-				if(c<0)
+				if(c>0)
 				{
 					int left_sp_id = idx_map.at<int>(r, c-1);
 					if(cur_sp_id != left_sp_id)
+					{
+						//cout<<cur_sp_id<<" "<<left_sp_id<<endl;
 						adjacencyMat.at<uchar>(cur_sp_id, left_sp_id) = adjacencyMat.at<uchar>(left_sp_id, cur_sp_id) = 1;
+					}
 				}
-				if(c<idx_map.cols)
+				if(c<idx_map.cols-1)
 				{
-					int right_sp_id = idx_map.at<int>(r, c-1);
+					int right_sp_id = idx_map.at<int>(r, c+1);
 					if(cur_sp_id != right_sp_id)
+					{
+						//cout<<cur_sp_id<<" "<<right_sp_id<<endl;
 						adjacencyMat.at<uchar>(cur_sp_id, right_sp_id) = adjacencyMat.at<uchar>(right_sp_id, cur_sp_id) = 1;
+					}
 				}
 			}
 		}

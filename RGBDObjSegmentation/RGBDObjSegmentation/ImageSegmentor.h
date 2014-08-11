@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "common_libs.h"
+#include "common.h"
 #include <vector>
 
 
@@ -21,6 +21,7 @@ namespace visualsearch
 
 		// features
 		std::vector<cv::Mat> feats;
+		Scalar meancolor;
 	};
 
 	// mainly for oversegmentation
